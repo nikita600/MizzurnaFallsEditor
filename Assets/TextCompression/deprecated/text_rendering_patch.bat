@@ -1,0 +1,2 @@
+armips.exe text_rendering_proc.asm
+pause
