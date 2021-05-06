@@ -337,3 +337,5 @@ Assets/Build.cue
 Assets/FileSystem/*
 Assets/psximager/
 Assets/TranslationKit/*
+Assets/FileSystem.sys
+Assets/FileSystem.cat
