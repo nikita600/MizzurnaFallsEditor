@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDD44E31-2AC9-4404-ADA2-C383FED2F2C9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MizzurnaFallsEditor</RootNamespace>
+    <AssemblyName>MizzurnaFallsEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Assets\TranslationKit\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BigGustave">
+      <HintPath>..\BigGustave.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Asset.cs" />
+    <Compile Include="Assets\ImageAssets\TimColor.cs" />
+    <Compile Include="Assets\ImageAssets\AtlasAssets\TimAtlasEntries.cs" />
+    <Compile Include="Assets\ImageAssets\TimFlagData.cs" />
+    <Compile Include="Assets\ImageAssets\TimBppMode.cs" />
+    <Compile Include="Assets\ImageAssets\TimClutData.cs" />
+    <Compile Include="Assets\ImageAssets\TimPixelData.cs" />
+    <Compile Include="Assets\ImageAssets\TimVramData.cs" />
+    <Compile Include="Assets\MeshAsset.cs" />
+    <Compile Include="Assets\MeshAssets\Primitives\Line\TmdLineColoredPrimitive.cs" />
+    <Compile Include="Assets\MeshAssets\Primitives\Line\TmdLineGradationPrimitive.cs" />
+    <Compile Include="Assets\MeshAssets\Primitives\TmdPolygonLitPrimitive.cs" />
+    <Compile Include="Assets\MeshAssets\Primitives\TmdPolygonPrimitive.cs" />
+    <Compile Include="Assets\MeshAssets\Primitives\TmdPolygonUnlitPrimitive.cs" />
+    <Compile Include="Assets\MeshAssets\Primitives\TmdPrimitiveHeader.cs" />
+    <Compile Include="Assets\MeshAssets\Primitives\TmdPrimitiveShadingMode.cs" />
+    <Compile Include="Assets\MeshAssets\Primitives\TmdSpritePrimitive.cs" />
+    <Compile Include="Assets\MeshAssets\Primitives\TmdPrimitive.cs" />
+    <Compile Include="Assets\MeshAssets\Primitives\TmdPrimitiveRaw.cs" />
+    <Compile Include="Assets\MeshAssets\Primitives\TmdPrimitiveCode.cs" />
+    <Compile Include="Assets\MeshAssets\TmdClutAddress.cs" />
+    <Compile Include="Assets\MeshAssets\TmdColor.cs" />
+    <Compile Include="Assets\MeshAssets\TmdHeader.cs" />
+    <Compile Include="Assets\MeshAssets\TmdNormal.cs" />
+    <Compile Include="Assets\MeshAssets\TmdObjectEntry.cs" />
+    <Compile Include="Assets\MeshAssets\TmdPrimitiveFactory.cs" />
+    <Compile Include="Assets\MeshAssets\TmdTextureFlags.cs" />
+    <Compile Include="Assets\MeshAssets\TmdUv.cs" />
+    <Compile Include="Assets\MeshAssets\TmdVertex.cs" />
+    <Compile Include="Assets\OutlineAssets\MfoCharacterEntry.cs" />
+    <Compile Include="Assets\OutlineAssets\MfoPaletteEntry.cs" />
+    <Compile Include="Assets\TextAssets\BaseTextAsset.cs" />
+    <Compile Include="Assets\BinaryAsset.cs" />
+    <Compile Include="Assets\CdArchive.cs" />
+    <Compile Include="Assets\LevelAssetArchive.cs" />
+    <Compile Include="Assets\LzAsset.cs" />
+    <Compile Include="Assets\TextAssets\MddAsset.cs" />
+    <Compile Include="Assets\TextAssets\MdtAsset.cs" />
+    <Compile Include="Assets\OutlineAssets\MfoAsset.cs" />
+    <Compile Include="Assets\RamAsset.cs" />
+    <Compile Include="Assets\SoundAssets\SeqAsset.cs" />
+    <Compile Include="Assets\ImageAssets\TimAsset.cs" />
+    <Compile Include="Assets\SoundAssets\VabAsset.cs" />
+    <Compile Include="Assets\ImageAssets\AtlasAssets\TimAtlasAsset.cs" />
+    <Compile Include="Assets\MeshAssets\TmdAsset.cs" />
+    <Compile Include="Attributes\AssetDataAttribute.cs" />
+    <Compile Include="Attributes\AssetNodeDataAttribute.cs" />
+    <Compile Include="EditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorForm.Designer.cs">
+      <DependentUpon>EditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EncodingTable.cs" />
+    <Compile Include="Nodes\AssetNode.cs" />
+    <Compile Include="Nodes\BaseTextAssetNode.cs" />
+    <Compile Include="Nodes\BinaryAssetNode.cs" />
+    <Compile Include="Nodes\CdArchiveNode.cs" />
+    <Compile Include="Nodes\LevelAssetArchiveNode.cs" />
+    <Compile Include="Nodes\LzAssetNode.cs" />
+    <Compile Include="Nodes\MddAssetNode.cs" />
+    <Compile Include="Nodes\MdtAssetNode.cs" />
+    <Compile Include="Nodes\MeshAssetNode.cs" />
+    <Compile Include="Nodes\MfoAssetNode.cs" />
+    <Compile Include="Nodes\RamAssetNode.cs" />
+    <Compile Include="Nodes\SeqAssetNode.cs" />
+    <Compile Include="Nodes\TimAssetNode.cs" />
+    <Compile Include="Nodes\TimAtlasAssetNode.cs" />
+    <Compile Include="Nodes\TmdAssetNode.cs" />
+    <Compile Include="Nodes\VabAssetNode.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\AssetUtility.cs" />
+    <Compile Include="Utilities\HuffmanUtility.Compression.cs" />
+    <Compile Include="Utilities\HuffmanUtility.Decompression.cs" />
+    <Compile Include="Utilities\HuffmanUtility.Node.cs" />
+    <Compile Include="Utilities\LzssUtility.Compression.cs" />
+    <Compile Include="Utilities\LzssUtility.Decompression.cs" />
+    <Compile Include="Utilities\NodeUtility.cs" />
+    <Compile Include="Utilities\PngUtility.cs" />
+    <Compile Include="Utilities\ReflectionUtility.cs" />
+    <Compile Include="Utilities\TmdConverterUtility.cs" />
+    <Compile Include="ViewControls\MfoEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControls\MfoEditor.Designer.cs">
+      <DependentUpon>MfoEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControls\RawAssetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControls\RawAssetControl.Designer.cs">
+      <DependentUpon>RawAssetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControls\MdtTextEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControls\MdtTextEditor.Designer.cs">
+      <DependentUpon>MdtTextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControls\TextViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControls\TextViewer.Designer.cs">
+      <DependentUpon>TextViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControls\TimAtlasViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControls\TimAtlasViewer.Designer.cs">
+      <DependentUpon>TimAtlasViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControls\TimViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControls\TimViewer.Designer.cs">
+      <DependentUpon>TimViewer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EditorForm.resx">
+      <DependentUpon>EditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ViewControls\MfoEditor.resx">
+      <DependentUpon>MfoEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewControls\RawAssetControl.resx">
+      <DependentUpon>RawAssetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewControls\MdtTextEditor.resx">
+      <DependentUpon>MdtTextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewControls\TextViewer.resx">
+      <DependentUpon>TextViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewControls\TimAtlasViewer.resx">
+      <DependentUpon>TimAtlasViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewControls\TimViewer.resx">
+      <DependentUpon>TimViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

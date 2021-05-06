@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MizzurnaFallsEditor", "MizzurnaFallsEditor\MizzurnaFallsEditor.csproj", "{FDD44E31-2AC9-4404-ADA2-C383FED2F2C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDD44E31-2AC9-4404-ADA2-C383FED2F2C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD44E31-2AC9-4404-ADA2-C383FED2F2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD44E31-2AC9-4404-ADA2-C383FED2F2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD44E31-2AC9-4404-ADA2-C383FED2F2C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AEE18CA8-C164-4826-85C0-926D8FEFB666}
+	EndGlobalSection
+EndGlobal
