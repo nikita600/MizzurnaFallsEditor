@@ -4,9 +4,9 @@ using MizzurnaFallsEditor.Attributes;
 namespace MizzurnaFallsEditor.Nodes
 {
     [AssetNodeData(typeof(MdtAsset))]
-    public sealed class MdtAssetNode : BaseTextAssetNode<MdtAsset, MdtAsset>
+    public sealed class MdtAssetNode : BaseTextAssetNode<MdtAsset, BaseTextAsset>
     {
-        public MdtAssetNode(MdtAsset asset, MdtAsset sourceAsset) : base(asset, sourceAsset, "MDT")
+        public MdtAssetNode(MdtAsset asset, BaseTextAsset sourceAsset) : base(asset, sourceAsset, "MDT")
         {
         }
     }
