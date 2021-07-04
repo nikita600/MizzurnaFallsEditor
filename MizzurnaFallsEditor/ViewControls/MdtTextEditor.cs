@@ -98,8 +98,12 @@ namespace MizzurnaFallsEditor.ViewControls
 		{
 			var rawText = _mdtAsset[_selectedIndex];
 
-			_stringsListView.Items[_selectedIndex].Text = GetPreviewString(_selectedIndex, rawText);
-			_stringsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+			var items = _stringsListView.Items;
+			if (_selectedIndex < items.Count)
+			{
+				_stringsListView.Items[_selectedIndex].Text = GetPreviewString(_selectedIndex, rawText);
+				_stringsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+			}			
 
 			var text = BaseTextAsset.GetString(rawText, _encodingTable, _selectedIndex);
 			_textViewer.SetText(text, _encodingTable);

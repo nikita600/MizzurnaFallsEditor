@@ -158,24 +158,27 @@ namespace MizzurnaFallsEditor.Utilities
 
 				var endX = startX + characterEntry.Width;
 
-				foreach (var data in characterEntry.PixelData)
+				if (characterEntry.PixelData != null)
 				{
-					_colorBuffer[0] = paletteEntry.GetColor(data & 0x0F, 0, 0);
-					_colorBuffer[1] = paletteEntry.GetColor((data & 0xF0) >> 4, 0, 0);
-
-					for (int i = 0; i < 2; ++i)
+					foreach (var data in characterEntry.PixelData)
 					{
-						if (x < width && y < height)
-						{
-							textPage[x, y] = _colorBuffer[i];
-						}
-						
-						x++;
+						_colorBuffer[0] = paletteEntry.GetColor(data & 0x0F, 0, 0);
+						_colorBuffer[1] = paletteEntry.GetColor((data & 0xF0) >> 4, 0, 0);
 
-						if (x == endX)
+						for (int i = 0; i < 2; ++i)
 						{
-							x = startX;
-							y++;
+							if (x < width && y < height)
+							{
+								textPage[x, y] = _colorBuffer[i];
+							}
+
+							x++;
+
+							if (x == endX)
+							{
+								x = startX;
+								y++;
+							}
 						}
 					}
 				}
