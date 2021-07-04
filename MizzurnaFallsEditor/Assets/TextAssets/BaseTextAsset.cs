@@ -23,19 +23,29 @@ namespace MizzurnaFallsEditor.Assets
 
         public int StringsCount => _rawStrings.Count;
 
-        public List<short> this[int stringIndex]
-        {
-	        get => _rawStrings[stringIndex];
-	        set => _rawStrings[stringIndex] = value;
-        }
-
-        public List<List<short>> RawStrings => _rawStrings;
-
         #endregion
 
         #region Public
 
-        public static string GetString(List<short> rawString, EncodingTable encodingTable, int stringIndex)
+		public List<short> GetRawString(int stringIndex)
+		{
+			var copyString = new List<short>(_rawStrings[stringIndex]);
+			return copyString;
+		}
+
+		public void SetRawString(int stringIndex, List<short> rawString)
+		{
+			var sourceString = _rawStrings[stringIndex];
+			sourceString.Clear();
+			sourceString.AddRange(rawString);
+		}
+
+		public string GetString(int stringIndex, EncodingTable encodingTable)
+		{
+			return GetString(GetRawString(stringIndex), encodingTable, stringIndex);
+		}
+
+		public static string GetString(List<short> rawString, EncodingTable encodingTable, int stringIndex)
         {
             var stringBuilder = new StringBuilder();
 

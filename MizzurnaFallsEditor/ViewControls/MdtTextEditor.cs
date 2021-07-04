@@ -50,7 +50,7 @@ namespace MizzurnaFallsEditor.ViewControls
 	        _pixelFontTable = pixelFontTable;
 	        _sourceEncodingTable = sourceEncodingTable;
 
-			UpdateTextEditor(-1);
+			UpdateTextEditor(0);
         }
 
         #endregion
@@ -61,21 +61,27 @@ namespace MizzurnaFallsEditor.ViewControls
 		{
 			_selectedIndex = selectedIndex;
 			_stringsListView.Items.Clear();
-			_stringTextBox.Text = string.Empty;
-			_textInfoLabel.Text = string.Empty;
-
+			
 			if (_mdtAsset == null)
 			{
+				_stringTextBox.Text = string.Empty;
+				_textInfoLabel.Text = string.Empty;
+
 				return;
 			}
 
 			var stringsCount = _mdtAsset.StringsCount;
 			for (var i = 0; i < stringsCount; ++i)
 			{
-				var previewString = GetPreviewString(i, _mdtAsset[i]);
+				var previewString = GetPreviewString(i, _mdtAsset.GetRawString(i));
 				_stringsListView.Items.Add(previewString);
 			}
 			_stringsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+
+			if (_selectedIndex >= 0 && _selectedIndex < _stringsListView.Items.Count)
+			{ 
+				_stringsListView.Items[_selectedIndex].Selected = true;
+			}
 
 			var fileSize = _mdtAsset.Serialize().Length;
 			var sourceFileSize = _srcMdtAsset.Serialize().Length;
@@ -96,16 +102,15 @@ namespace MizzurnaFallsEditor.ViewControls
         
 		private void UpdateCurrentPreviewString()
 		{
-			var rawText = _mdtAsset[_selectedIndex];
-
-			var items = _stringsListView.Items;
-			if (_selectedIndex < items.Count)
+			if (_selectedIndex >= _stringsListView.Items.Count)
 			{
-				_stringsListView.Items[_selectedIndex].Text = GetPreviewString(_selectedIndex, rawText);
-				_stringsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-			}			
+				return;
+			}
 
-			var text = BaseTextAsset.GetString(rawText, _encodingTable, _selectedIndex);
+			_stringsListView.Items[_selectedIndex].Text = GetPreviewString(_selectedIndex, _mdtAsset.GetRawString(_selectedIndex));
+			_stringsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+
+			var text = _mdtAsset.GetString(_selectedIndex, _encodingTable);
 			_textViewer.SetText(text, _encodingTable);
 		}
 
@@ -124,18 +129,15 @@ namespace MizzurnaFallsEditor.ViewControls
 			
 			if (IsValid())
 			{
-				var rawString = _mdtAsset[_selectedIndex];
-				var textString = BaseTextAsset.GetString(rawString, _encodingTable, _selectedIndex);
+				var textString = _mdtAsset.GetString(_selectedIndex, _encodingTable);
+				var srcTextString = _srcMdtAsset.GetString(_selectedIndex, _sourceEncodingTable);
 
-				Console.WriteLine("Width: " + _textViewer.FontAsset.GetWidth(rawString));
-
-				var srcString = _srcMdtAsset[_selectedIndex];
-				var srcTextString = BaseTextAsset.GetString(srcString, _sourceEncodingTable, _selectedIndex);
-				
 				_stringTextBox.Text = textString;
 				_sourceTextBox.Text = srcTextString;
 				
 				_textViewer.SetText(textString, _encodingTable);
+
+				Console.WriteLine("Width: " + _textViewer.FontAsset.GetWidth(_mdtAsset.GetRawString(_selectedIndex)));
 			}
 			else
 			{
@@ -150,10 +152,8 @@ namespace MizzurnaFallsEditor.ViewControls
 				return;
 			}
 
-			var rawText = _mdtAsset[_selectedIndex];
 			var rawString = BaseTextAsset.GetRawString(_stringTextBox.Text, _encodingTable);
-			rawText.Clear();
-			rawText.AddRange(rawString);
+			_mdtAsset.SetRawString(_selectedIndex, rawString);
 
 			UpdateCurrentPreviewString();
 		}
@@ -168,7 +168,7 @@ namespace MizzurnaFallsEditor.ViewControls
 			for (int i = 0, stringsCount = _mdtAsset.StringsCount; i < stringsCount; ++i)
 			{
 				var rawString = new List<short>();
-				var textString = BaseTextAsset.GetString(_mdtAsset[i], _encodingTable, i);
+				var textString = _mdtAsset.GetString(i, _encodingTable);
 
 				for (var j = 0; j < textString.Length; ++j)
 				{
@@ -191,8 +191,7 @@ namespace MizzurnaFallsEditor.ViewControls
 					}
 				}
 
-				_mdtAsset[i].Clear();
-				_mdtAsset[i].AddRange(rawString);
+				_mdtAsset.SetRawString(i, rawString);
 			}
 		}
 
@@ -205,17 +204,18 @@ namespace MizzurnaFallsEditor.ViewControls
 			var stringsCount = _mdtAsset.StringsCount;
 			for (var i = 0; i < stringsCount; ++i)
 			{
-				FormatTextEntry(_mdtAsset[i], maxWidth, fontAsset, spaceEntry);
+				FormatTextEntry(i, _mdtAsset, maxWidth, fontAsset, spaceEntry);
 			}
 
 			UpdateTextEditor(_selectedIndex);
 		}
 
-		private void FormatTextEntry(List<short> rawString, int maxWidth, MfoAsset fontAsset, MfoCharacterEntry spaceEntry)
+		private void FormatTextEntry(int stringIndex, BaseTextAsset textAsset, int maxWidth, MfoAsset fontAsset, MfoCharacterEntry spaceEntry)
 		{
 			var currentWidth = 0;
 			var formattedString = new List<short>();
-			var words = SplitStringToWords(rawString);
+
+			var words = SplitStringToWords(textAsset.GetRawString(stringIndex));
 			for (var w = 0; w < words.Count; ++w)
 			{
 				var word = words[w];
@@ -253,8 +253,7 @@ namespace MizzurnaFallsEditor.ViewControls
 				formattedString.RemoveAt(formattedString.Count - 1);
 			}
 
-			rawString.Clear();
-			rawString.AddRange(formattedString);
+			textAsset.SetRawString(stringIndex, formattedString);
 		}
 
 		private List<List<short>> SplitStringToWords(List<short> rawString)
@@ -295,9 +294,7 @@ namespace MizzurnaFallsEditor.ViewControls
 			var maxWidth = 240;
 			var fontAsset = _textViewer.FontAsset;
 			var spaceEntry = fontAsset.GetCharacterEntry(SpaceCode);
-			var rawString = _mdtAsset[_selectedIndex];
-
-			FormatTextEntry(rawString, maxWidth, fontAsset, spaceEntry);
+			FormatTextEntry(_selectedIndex, _mdtAsset, maxWidth, fontAsset, spaceEntry);
 
 			UpdateCurrentPreviewString();
 		}

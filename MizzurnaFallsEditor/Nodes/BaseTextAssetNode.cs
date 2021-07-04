@@ -54,11 +54,9 @@ namespace MizzurnaFallsEditor.Nodes
 		        for (var i = 0; i < Asset.StringsCount && i < stringEntries.Count; ++i)
 		        {
 			        var stringEntry = stringEntries[i];
-			        var rawString = BaseTextAsset.GetRawString(stringEntry, encodingTable);
-				        
-			        var rawText = Asset[i];
-			        rawText.Clear();
-			        rawText.AddRange(rawString);
+					var rawString = BaseTextAsset.GetRawString(stringEntry, encodingTable);
+
+					Asset.SetRawString(i, rawString);
 		        }
 	        }
 	        
@@ -153,10 +151,8 @@ namespace MizzurnaFallsEditor.Nodes
 		        {
 			        var stringEntry = textEntries[i];
 		            var rawString = BaseTextAsset.GetRawString(stringEntry, encodingTable);
-		            
-		            var rawText = Asset[i];
-		            rawText.Clear();
-		            rawText.AddRange(rawString);
+
+					Asset.SetRawString(i, rawString);
 		        }
 	        }
 	        
@@ -193,8 +189,7 @@ namespace MizzurnaFallsEditor.Nodes
 	        
 		        for (var i = 0; i < Asset.StringsCount; ++i)
 		        {
-			        var rawText = Asset[i];
-			        var text = BaseTextAsset.GetString(rawText, encodingTable, i);
+			        var text = Asset.GetString(i, encodingTable);
 
 			        var entryIndex = i.ToString("D4");
 			        
