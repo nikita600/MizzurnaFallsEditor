@@ -1,15 +1,14 @@
 ; -----------------------------------------------------------------------------
 
 .psx
-.Open "!SLPS017.83", "SLPS017.83", 0x8000B070
+.Open "!SLPS017.83", "SLPS017.83", 0x8000F800
 
 
 ; -----------------------------------------------------------------------------
 
 USE_MDD:
 USE_VWF:
-LOG_MEM_MGR:
-USE_HEADER:
+;LOG_MEM_MGR:
 
 ; -----------------------------------------------------------------------------
 
@@ -68,13 +67,7 @@ USE_HEADER:
 .definelabel dword_800A32F8, 				0x800A32F8
 
 .definelabel customCodeSize,				0x800
-
-.ifdef USE_HEADER
-	.definelabel dynamicMemoryStart, 			0x8010CC00
-.else
-	.definelabel targetCustomCodeStart, 		0x8010CC00
-	.definelabel dynamicMemoryStart,			targetCustomCodeStart+customCodeSize
-.endif
+.definelabel dynamicMemoryStart, 			0x8010CC00
 
 .definelabel dynamicMemoryEnd, 				0x801FE000
 .definelabel dynamicMemorySize,				dynamicMemoryEnd - dynamicMemoryStart
@@ -86,65 +79,56 @@ USE_HEADER:
 .definelabel sub_8004FB7C, 0x8004FB7C
 .definelabel sub_8004FC10, 0x8004FC10
 
-; --------------------------------- PSX-HEADER --------------------------------
+; ---------------------------------- PATCHES ---------------------------------
 
-.ifdef USE_HEADER
-	.headersize 0x8000B070
-	.org 0x8000B100 ;.orga 0x00000090
-.else
+.headersize 0x8000F800
 
-;0x8014c000, 0xAE000 - 170.EXE
+;80051e9c-80051ed8 - SetDumpFnt, no usings
+;80051edc-80051f78 - FntLoad, no usings
+;80051f7c-80052230 - FntOpen, no usings
+;80052234-8005254c - FntFlush, using at: 80014b5c
+.org 0x80051e9c
+.area 0x6B4
 
-	.headersize 0x8000F800
-	.org 0x800A3508
-	
-moveCodeToDynamicMemory:
-	
-	la		$s1, dynamicMemoryStart
-	la      $v0, @CodeArea
-	li		$v1, targetCustomCodeStart
-	
-@copyRoutine:
-	lw         $t7, 0x0($v0)
-	addiu      $v0, $v0, 0x04
-	sw		   $t7, 0x0($v1)
-	addiu	   $v1, $v1, 0x04
-	
-	sltu       $at, $v0, $s1
-	bne        $at, $zero, @copyRoutine
-	nop
-	
-@return:
-	li		$s1, 0x00
-	la      $v0, dword_800A3508
-	jr      $ra
-    nop
-	
-	
-	
-.endif
+	@renderText_01_patches: ; 8000B3F0 - 8000B100 = 2F0
+		.include "src\renderText01\renderText_01_patches.asm"
+	@renderText_01_renderChar_patches: ; 8000B420 - 8000B3F0 = 30
+		.include "src\renderText01\renderText_01_renderChar_patches.asm"
 
-@CodeArea:
+	@renderText_02_GetStringOffset: ;8000B590 - 8000B420 = 170
+		.include "src\renderText02\renderText_02_GetStringOffset.asm"
+	@renderText_02_DecompressCharacter: ;8000B690 - 8000B590 = 100
+		.include "src\renderText02\renderText_02_DecompressCharacter.asm"
+	@renderText_02_renderChar_patches: ; 8000B6C4 - 8000B690 = 34
+		.include "src\renderText02\renderText_02_renderChar_patches.asm"
 
-.area customCodeSize
-.include "src\renderText01\renderText_01_patches.asm"
-.include "src\renderText01\renderText_01_renderChar_patches.asm"
-
-.include "src\renderText02\renderText_02_patches.asm"
-.include "src\renderText02\renderText_02_GetStringOffset.asm"
-.include "src\renderText02\renderText_02_DecompressCharacter.asm"
-.include "src\renderText02\renderText_02_renderChar_patches.asm"
-
-.include "src\renderInventory_patches.asm"
-.include "src\renderNotebookCharacter_patches.asm"
-.include "src\memoryManagerAllocPatches.asm"
 .endarea
+
+;80052550-80052918 - FntPrint
+;8005291c-80052948 - memset
+.org 0x80052550
+.area 0x3FC
+	jr ra
+	nop
+
+	@renderInventory_patches: ; 8000B800 - 8000B6C8 = 58
+		.include "src\renderInventory_patches.asm"
+	@renderNotebookCharacter_patches: ; 8000B800 - 8000B720 = E0
+		.include "src\renderNotebookCharacter_patches.asm"
+
+	@memoryManagerAllocPatches: ; DEBUG
+		.include "src\memoryManagerAllocPatches.asm"
+
+.endarea
+
+.org 0x80014b5c
+	nop ;jal FntFlush
+	nop ;_move a0,v0
 
 ; -----------------------------------------------------------------------------
 
 ; ------------------------------- ORIGINAL CODE -------------------------------
 
-.headersize 0x8000F800
 
 .include "src\patches.asm"
 

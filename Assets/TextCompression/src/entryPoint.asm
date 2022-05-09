@@ -6,13 +6,7 @@
 @var_4 equ -4
 
 start:
-
-	.ifdef USE_HEADER
 				la      $v0, dword_800A3508
-	.else
-				jal		moveCodeToDynamicMemory
-				nop
-	.endif
                 la      $v1, unk_80101ED0
 
 loc_80079FCC:                            ; CODE XREF: start+1Cj

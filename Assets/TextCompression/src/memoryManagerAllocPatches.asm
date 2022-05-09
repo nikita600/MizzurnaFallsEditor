@@ -2,6 +2,8 @@
 @var_v0			equ -0x08
 @var_a0			equ -0x0C
 
+.ifdef LOG_MEM_MGR
+
 print_mem_manager_debug_info:
 	
 	lw      $a3, 0x10($sp)
@@ -28,3 +30,5 @@ print_mem_manager_debug_info:
 
 alloc_fmt:
 	.ascii  "ALLOC: %x, SZ: %x, ra: %x", 0x0A
+
+.endif

@@ -1,15 +1,14 @@
-﻿; 29 files included
-; 3887 lines
-; 518 labels
+﻿; 28 files included
+; 3857 lines
+; 515 labels
 ; 296 equations
 
-; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm
+; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm
 ; src\renderText01\renderText_01_patches.asm
 ; src\renderText01\renderText_01_getStringEntryOffset.asm
 ; src\renderText01\renderText_01_getStringPosition.asm
 ; src\renderText01\renderText_01_decompressCharacter.asm
 ; src\renderText01\renderText_01_renderChar_patches.asm
-; src\renderText02\renderText_02_patches.asm
 ; src\renderText02\renderText_02_GetStringOffset.asm
 ; src\renderText02\renderText_02_DecompressCharacter.asm
 ; src\renderText02\renderText_02_renderChar_patches.asm
@@ -33,678 +32,671 @@
 ; src\renderMapTextPoliceStation.asm
 ; src\memoryManagerAlloc.asm
 
-FFFFFFFF .psx                                                         ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 3
-FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 4
-8000B070 use_mdd:                                                     ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 9
-8000B070 use_vwf:                                                     ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 10
-8000B070 log_mem_mgr:                                                 ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 11
-8000B070 use_header:                                                  ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 12
-800563EC getclut:                                                     ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 16
-800563AC gettpage:                                                    ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 17
-80056B6C gsgetactivebuff:                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 18
-80057E4C gssetrefview2:                                               ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 19
-8005743C gssetprojection:                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 20
-80055C4C krom2rawadd2:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 22
-80053214 loadimage:                                                   ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 23
-80055790 loadimage2:                                                  ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 24
-80033EE4 rendertext_copyimagetobuffer:                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 26
-80034138 rendertextsub01_05:                                          ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 27
-80023154 sub_80023154:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 29
-8003D3B0 loadallfonts:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 30
-8003E32C sub_8003e32c:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 31
-80025E58 sub_80025e58:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 32
-8003E81C sub_8003e81c:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 33
-8003D6E0 sub_8003d6e0:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 34
-80048564 sub_80048564:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 35
-80035864 sub_80035864:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 36
-80035CC0 sub_80035cc0:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 37
-8003E4A0 sub_8003e4a0:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 38
-8001A770 sub_8001a770:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 39
-8003DED8 sub_8003ded8:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 40
-80035928 rendertext_00:                                               ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 41
-80048574 sub_80048574:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 42
-8004FD8C sub_8004fd8c:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 43
-800358DC sub_800358dc:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 44
-80025E64 sub_80025e64:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 45
-80019F0C sub_80019f0c:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 46
-80035B30 rendertextunknown01:                                         ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 48
-8004FC68 mm_alloc_ng:                                                 ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 50
-800342D8 loadfontdata:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 51
-8004FFFC sub_8004fffc:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 53
-8005143C printf:                                                      ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 54
-8001A77C getactivebufindex:                                           ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 56
-8005640C addprim:                                                     ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 57
-800A3508 dword_800a3508:                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 59
-80101ED0 unk_80101ed0:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 60
-800A341C dword_800a341c:                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 61
-800A3420 dword_800a3420:                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 62
-800A3300 dword_800a3300:                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 63
-800A32FC dword_800a32fc:                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 64
-800A39D0 dword_800a39d0:                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 65
-8007A13C initheap:                                                    ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 66
-8004F480 main:                                                        ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 67
-800A32F8 dword_800a32f8:                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 68
-00000800 customcodesize:                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 70
-8010CC00 dynamicmemorystart:                                          ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 73
-801FE000 dynamicmemoryend:                                            ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 79
-000F1400 dynamicmemorysize:                                           ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 80
-8007A14C memcardinit:                                                 ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 82
-8007A198 memcardstart:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 83
-80038AD0 sub_80038ad0:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 84
-8004F674 sub_8004f674:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 85
-8004FB7C sub_8004fb7c:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 86
-8004FC10 sub_8004fc10:                                                ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 87
-8000B070 .headersize 0x8000B070                                       ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 92
-8000B070 .org 0x8000B100                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 93
-8000B100 @codearea:                                                   ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 127
-8000B100 .area 0x00000800                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 129
+FFFFFFFF .psx                                                         ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 3
+FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000F800                  ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 4
+8000F800 use_mdd:                                                     ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 9
+8000F800 use_vwf:                                                     ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 10
+800563EC getclut:                                                     ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 15
+800563AC gettpage:                                                    ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 16
+80056B6C gsgetactivebuff:                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 17
+80057E4C gssetrefview2:                                               ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 18
+8005743C gssetprojection:                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 19
+80055C4C krom2rawadd2:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 21
+80053214 loadimage:                                                   ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 22
+80055790 loadimage2:                                                  ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 23
+80033EE4 rendertext_copyimagetobuffer:                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 25
+80034138 rendertextsub01_05:                                          ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 26
+80023154 sub_80023154:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 28
+8003D3B0 loadallfonts:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 29
+8003E32C sub_8003e32c:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 30
+80025E58 sub_80025e58:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 31
+8003E81C sub_8003e81c:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 32
+8003D6E0 sub_8003d6e0:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 33
+80048564 sub_80048564:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 34
+80035864 sub_80035864:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 35
+80035CC0 sub_80035cc0:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 36
+8003E4A0 sub_8003e4a0:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 37
+8001A770 sub_8001a770:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 38
+8003DED8 sub_8003ded8:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 39
+80035928 rendertext_00:                                               ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 40
+80048574 sub_80048574:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 41
+8004FD8C sub_8004fd8c:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 42
+800358DC sub_800358dc:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 43
+80025E64 sub_80025e64:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 44
+80019F0C sub_80019f0c:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 45
+80035B30 rendertextunknown01:                                         ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 47
+8004FC68 mm_alloc_ng:                                                 ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 49
+800342D8 loadfontdata:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 50
+8004FFFC sub_8004fffc:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 52
+8005143C printf:                                                      ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 53
+8001A77C getactivebufindex:                                           ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 55
+8005640C addprim:                                                     ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 56
+800A3508 dword_800a3508:                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 58
+80101ED0 unk_80101ed0:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 59
+800A341C dword_800a341c:                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 60
+800A3420 dword_800a3420:                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 61
+800A3300 dword_800a3300:                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 62
+800A32FC dword_800a32fc:                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 63
+800A39D0 dword_800a39d0:                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 64
+8007A13C initheap:                                                    ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 65
+8004F480 main:                                                        ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 66
+800A32F8 dword_800a32f8:                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 67
+00000800 customcodesize:                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 69
+8010CC00 dynamicmemorystart:                                          ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 70
+801FE000 dynamicmemoryend:                                            ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 72
+000F1400 dynamicmemorysize:                                           ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 73
+8007A14C memcardinit:                                                 ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 75
+8007A198 memcardstart:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 76
+80038AD0 sub_80038ad0:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 77
+8004F674 sub_8004f674:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 78
+8004FB7C sub_8004fb7c:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 79
+8004FC10 sub_8004fc10:                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 80
+8000F800 .headersize 0x8000F800                                       ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 84
+8000F800 .org 0x80051E9C                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 90
+80051E9C .area 0x000006B4                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 91
+80051E9C @rendertext_01_patches:                                      ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 93
 800349EC start_mdt_read:                                              ; src\renderText01\renderText_01_getStringEntryOffset.asm line 19
 80034A04 check_string_index:                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 20
-8000B100 gettextentryoffset:                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 24
-8000B100 @push_registers_to_stack:                                    ; src\renderText01\renderText_01_getStringEntryOffset.asm line 26
-8000B100    sw      s5,0x38(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 27
-8000B104    sw      s6,0x3C(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 28
-8000B108    sw      s7,0x40(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 29
-8000B10C @setup_mdd_context:                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 31
-8000B10C    lui     s5,-0x7FFF                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 32
-8000B110    addiu   s5,-0x4F10                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 32
-8000B114 @get_mdt_offset:                                             ; src\renderText01\renderText_01_getStringEntryOffset.asm line 34
-8000B114    lw      s6,0x8(s3)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 35
-8000B118    nop                                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 36
-8000B11C    lw      s6,0x0(s6)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 37
-8000B120    ori     v0,r0,0x4                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 38
-8000B124    addu    s7,s6,v0                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 39
-8000B128 @check_is_mdt:                                               ; src\renderText01\renderText_01_getStringEntryOffset.asm line 41
-8000B128    lw      v0,0x0(s6)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 42
-8000B12C    lui     v1,0x54                                           ; src\renderText01\renderText_01_getStringEntryOffset.asm line 43
-8000B130    addiu   v1,0x444D                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 43
-8000B134    bne     v0,v1,0x8000B154                                  ; src\renderText01\renderText_01_getStringEntryOffset.asm line 44
-8000B138    nop                                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 45
-8000B13C @continue_mdt_mode:                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 49
-8000B13C    ori     v0,r0,0x1                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 50
-8000B140    sh      v0,0x34(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 51
-8000B144    sb      zero,0x8(s5)                                      ; src\renderText01\renderText_01_getStringEntryOffset.asm line 52
-8000B148    lhu     a2,0x0(s3)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 54
-8000B14C    j       0x800349EC                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 55
-8000B150    nop                                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 56
-8000B154 @start_mdd_mode:                                             ; src\renderText01\renderText_01_getStringEntryOffset.asm line 60
-8000B154    sh      zero,0x34(sp)                                     ; src\renderText01\renderText_01_getStringEntryOffset.asm line 61
-8000B158 @get_left_nodes_ptr:                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 65
-8000B158    jal     0x8000B198                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 66
-8000B15C    ori     v0,r0,0x14                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 67
-8000B160    sw      v0,0x28(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 68
-8000B164 @get_right_nodes_ptr:                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 72
-8000B164    jal     0x8000B198                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 73
-8000B168    ori     v0,r0,0x1C                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 74
-8000B16C    sw      v0,0x2C(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 75
-8000B170 @get_char_nodes_ptr:                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 79
-8000B170    jal     0x8000B198                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 80
-8000B174    ori     v0,r0,0x24                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 81
-8000B178    sw      v0,0x30(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 82
-8000B17C @load_str_entry_pos:                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 86
-8000B17C    lhu     a2,0x0(s3)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 87
-8000B180    lw      v0,0x4(s6)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 88
-8000B184    lw      a0,0x8(s6)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 89
-8000B188    sll     a1,a2,0x2                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 90
-8000B18C    addu    a0,s7                                             ; src\renderText01\renderText_01_getStringEntryOffset.asm line 91
-8000B190    j       0x80034A04                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 92
-8000B194    nop                                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 93
-8000B198 @get_mdd_offset_to_v0:                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 97
-8000B198    add     v0,v0,s6                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 98
-8000B19C    lw      v1,0x0(v0)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 99
-8000B1A0    nop                                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 100
-8000B1A4    addu    v0,s7,v1                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 101
-8000B1A8    jr      ra                                                ; src\renderText01\renderText_01_getStringEntryOffset.asm line 102
-8000B1AC    nop                                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 103
+80051E9C gettextentryoffset:                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 24
+80051E9C @push_registers_to_stack:                                    ; src\renderText01\renderText_01_getStringEntryOffset.asm line 26
+80051E9C    sw      s5,0x38(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 27
+80051EA0    sw      s6,0x3C(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 28
+80051EA4    sw      s7,0x40(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 29
+80051EA8 @setup_mdd_context:                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 31
+80051EA8    lui     s5,-0x7FFF                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 32
+80051EAC    addiu   s5,-0x4F10                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 32
+80051EB0 @get_mdt_offset:                                             ; src\renderText01\renderText_01_getStringEntryOffset.asm line 34
+80051EB0    lw      s6,0x8(s3)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 35
+80051EB4    nop                                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 36
+80051EB8    lw      s6,0x0(s6)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 37
+80051EBC    ori     v0,r0,0x4                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 38
+80051EC0    addu    s7,s6,v0                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 39
+80051EC4 @check_is_mdt:                                               ; src\renderText01\renderText_01_getStringEntryOffset.asm line 41
+80051EC4    lw      v0,0x0(s6)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 42
+80051EC8    lui     v1,0x54                                           ; src\renderText01\renderText_01_getStringEntryOffset.asm line 43
+80051ECC    addiu   v1,0x444D                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 43
+80051ED0    bne     v0,v1,0x80051EF0                                  ; src\renderText01\renderText_01_getStringEntryOffset.asm line 44
+80051ED4    nop                                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 45
+80051ED8 @continue_mdt_mode:                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 49
+80051ED8    ori     v0,r0,0x1                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 50
+80051EDC    sh      v0,0x34(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 51
+80051EE0    sb      zero,0x8(s5)                                      ; src\renderText01\renderText_01_getStringEntryOffset.asm line 52
+80051EE4    lhu     a2,0x0(s3)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 54
+80051EE8    j       0x800349EC                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 55
+80051EEC    nop                                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 56
+80051EF0 @start_mdd_mode:                                             ; src\renderText01\renderText_01_getStringEntryOffset.asm line 60
+80051EF0    sh      zero,0x34(sp)                                     ; src\renderText01\renderText_01_getStringEntryOffset.asm line 61
+80051EF4 @get_left_nodes_ptr:                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 65
+80051EF4    jal     0x80051F34                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 66
+80051EF8    ori     v0,r0,0x14                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 67
+80051EFC    sw      v0,0x28(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 68
+80051F00 @get_right_nodes_ptr:                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 72
+80051F00    jal     0x80051F34                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 73
+80051F04    ori     v0,r0,0x1C                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 74
+80051F08    sw      v0,0x2C(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 75
+80051F0C @get_char_nodes_ptr:                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 79
+80051F0C    jal     0x80051F34                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 80
+80051F10    ori     v0,r0,0x24                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 81
+80051F14    sw      v0,0x30(sp)                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 82
+80051F18 @load_str_entry_pos:                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 86
+80051F18    lhu     a2,0x0(s3)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 87
+80051F1C    lw      v0,0x4(s6)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 88
+80051F20    lw      a0,0x8(s6)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 89
+80051F24    sll     a1,a2,0x2                                         ; src\renderText01\renderText_01_getStringEntryOffset.asm line 90
+80051F28    addu    a0,s7                                             ; src\renderText01\renderText_01_getStringEntryOffset.asm line 91
+80051F2C    j       0x80034A04                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 92
+80051F30    nop                                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 93
+80051F34 @get_mdd_offset_to_v0:                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 97
+80051F34    add     v0,v0,s6                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 98
+80051F38    lw      v1,0x0(v0)                                        ; src\renderText01\renderText_01_getStringEntryOffset.asm line 99
+80051F3C    nop                                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 100
+80051F40    addu    v0,s7,v1                                          ; src\renderText01\renderText_01_getStringEntryOffset.asm line 101
+80051F44    jr      ra                                                ; src\renderText01\renderText_01_getStringEntryOffset.asm line 102
+80051F48    nop                                                       ; src\renderText01\renderText_01_getStringEntryOffset.asm line 103
 80034A74 load_mdt_offset:                                             ; src\renderText01\renderText_01_getStringPosition.asm line 17
 80034A88 setup_mdt_render:                                            ; src\renderText01\renderText_01_getStringPosition.asm line 18
-8000B1B0 getstringposition:                                           ; src\renderText01\renderText_01_getStringPosition.asm line 22
-8000B1B0 @is_mdt_mode_str_pos:                                        ; src\renderText01\renderText_01_getStringPosition.asm line 24
-8000B1B0    lhu     v0,0x34(sp)                                       ; src\renderText01\renderText_01_getStringPosition.asm line 25
-8000B1B4    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 26
-8000B1B8    beqz    v0,0x8000B1D0                                     ; src\renderText01\renderText_01_getStringPosition.asm line 27
-8000B1BC    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 28
-8000B1C0    lw      v0,0x8(s3)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 30
-8000B1C4    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 31
-8000B1C8    j       0x80034A74                                        ; src\renderText01\renderText_01_getStringPosition.asm line 32
-8000B1CC    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 33
-8000B1D0 @get_stringpositionmdd:                                      ; src\renderText01\renderText_01_getStringPosition.asm line 37
-8000B1D0 @load_bit_count:                                             ; src\renderText01\renderText_01_getStringPosition.asm line 39
-8000B1D0    lw      v0,0xC(s6)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 40
-8000B1D4    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 41
-8000B1D8    addu    v0,v0,s7                                          ; src\renderText01\renderText_01_getStringPosition.asm line 42
-8000B1DC    addu    v0,v0,a2                                          ; src\renderText01\renderText_01_getStringPosition.asm line 43
-8000B1E0    lbu     v0,0x0(v0)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 44
-8000B1E4    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 45
-8000B1E8    sb      v0,0x4(s5)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 46
-8000B1EC @load_string_position:                                       ; src\renderText01\renderText_01_getStringPosition.asm line 48
-8000B1EC    lw      v0,0x10(s6)                                       ; src\renderText01\renderText_01_getStringPosition.asm line 49
-8000B1F0    lhu     v1,0x0(s4)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 50
-8000B1F4    addu    v0,s7,v0                                          ; src\renderText01\renderText_01_getStringPosition.asm line 51
-8000B1F8    addu    v0,v1                                             ; src\renderText01\renderText_01_getStringPosition.asm line 52
-8000B1FC    sw      v0,0x54(s0)                                       ; src\renderText01\renderText_01_getStringPosition.asm line 53
-8000B200 @load_first_string_byte:                                     ; src\renderText01\renderText_01_getStringPosition.asm line 57
-8000B200    lbu     v1,0x0(v0)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 58
-8000B204    addiu   v0,0x1                                            ; src\renderText01\renderText_01_getStringPosition.asm line 59
-8000B208    sw      v0,0x54(s0)                                       ; src\renderText01\renderText_01_getStringPosition.asm line 60
-8000B20C    lbu     v0,0x4(s5)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 62
-8000B210    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 63
-8000B214    sllv    v1,v0                                             ; src\renderText01\renderText_01_getStringPosition.asm line 64
-8000B218    sb      v1,0x2(s5)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 65
-8000B21C    j       0x80034A88                                        ; src\renderText01\renderText_01_getStringPosition.asm line 67
-8000B220    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 68
+80051F4C getstringposition:                                           ; src\renderText01\renderText_01_getStringPosition.asm line 22
+80051F4C @is_mdt_mode_str_pos:                                        ; src\renderText01\renderText_01_getStringPosition.asm line 24
+80051F4C    lhu     v0,0x34(sp)                                       ; src\renderText01\renderText_01_getStringPosition.asm line 25
+80051F50    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 26
+80051F54    beqz    v0,0x80051F6C                                     ; src\renderText01\renderText_01_getStringPosition.asm line 27
+80051F58    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 28
+80051F5C    lw      v0,0x8(s3)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 30
+80051F60    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 31
+80051F64    j       0x80034A74                                        ; src\renderText01\renderText_01_getStringPosition.asm line 32
+80051F68    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 33
+80051F6C @get_stringpositionmdd:                                      ; src\renderText01\renderText_01_getStringPosition.asm line 37
+80051F6C @load_bit_count:                                             ; src\renderText01\renderText_01_getStringPosition.asm line 39
+80051F6C    lw      v0,0xC(s6)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 40
+80051F70    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 41
+80051F74    addu    v0,v0,s7                                          ; src\renderText01\renderText_01_getStringPosition.asm line 42
+80051F78    addu    v0,v0,a2                                          ; src\renderText01\renderText_01_getStringPosition.asm line 43
+80051F7C    lbu     v0,0x0(v0)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 44
+80051F80    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 45
+80051F84    sb      v0,0x4(s5)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 46
+80051F88 @load_string_position:                                       ; src\renderText01\renderText_01_getStringPosition.asm line 48
+80051F88    lw      v0,0x10(s6)                                       ; src\renderText01\renderText_01_getStringPosition.asm line 49
+80051F8C    lhu     v1,0x0(s4)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 50
+80051F90    addu    v0,s7,v0                                          ; src\renderText01\renderText_01_getStringPosition.asm line 51
+80051F94    addu    v0,v1                                             ; src\renderText01\renderText_01_getStringPosition.asm line 52
+80051F98    sw      v0,0x54(s0)                                       ; src\renderText01\renderText_01_getStringPosition.asm line 53
+80051F9C @load_first_string_byte:                                     ; src\renderText01\renderText_01_getStringPosition.asm line 57
+80051F9C    lbu     v1,0x0(v0)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 58
+80051FA0    addiu   v0,0x1                                            ; src\renderText01\renderText_01_getStringPosition.asm line 59
+80051FA4    sw      v0,0x54(s0)                                       ; src\renderText01\renderText_01_getStringPosition.asm line 60
+80051FA8    lbu     v0,0x4(s5)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 62
+80051FAC    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 63
+80051FB0    sllv    v1,v0                                             ; src\renderText01\renderText_01_getStringPosition.asm line 64
+80051FB4    sb      v1,0x2(s5)                                        ; src\renderText01\renderText_01_getStringPosition.asm line 65
+80051FB8    j       0x80034A88                                        ; src\renderText01\renderText_01_getStringPosition.asm line 67
+80051FBC    nop                                                       ; src\renderText01\renderText_01_getStringPosition.asm line 68
 80034AE0 continue_read_character:                                     ; src\renderText01\renderText_01_decompressCharacter.asm line 7
 80034B24 handle_character:                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 8
-8000B224 decompresscharactermdd:                                      ; src\renderText01\renderText_01_decompressCharacter.asm line 12
-8000B224 @is_mdt_mode_char:                                           ; src\renderText01\renderText_01_decompressCharacter.asm line 14
-8000B224    lhu     v0,0x34(sp)                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 15
-8000B228    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 16
-8000B22C    beqz    v0,0x8000B240                                     ; src\renderText01\renderText_01_decompressCharacter.asm line 17
-8000B230    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 18
-8000B234    lbu     s2,0x0(a0)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 20
-8000B238    j       0x80034AE0                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 21
-8000B23C    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 22
-8000B240 @read_prev_char:                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 26
-8000B240    lbu     v0,0x8(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 27
-8000B244    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 28
-8000B248    beqz    v0,0x8000B264                                     ; src\renderText01\renderText_01_decompressCharacter.asm line 29
-8000B24C    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 30
-8000B250    lhu     s1,0x6(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 32
-8000B254    lbu     s2,0x6(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 33
-8000B258    sb      zero,0x8(s5)                                      ; src\renderText01\renderText_01_decompressCharacter.asm line 34
-8000B25C    j       0x80034B24                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 36
-8000B260    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 37
-8000B264 @read_leaf:                                                  ; src\renderText01\renderText_01_decompressCharacter.asm line 41
-8000B264    lb      v0,0x4(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 42
-8000B268    ori     v1,r0,0x8                                         ; src\renderText01\renderText_01_decompressCharacter.asm line 43
-8000B26C    sltu    v0,v1                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 44
-8000B270    beqz    v0,0x8000B318                                     ; src\renderText01\renderText_01_decompressCharacter.asm line 45
-8000B274    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 46
-8000B278    lb      v0,0x2(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 48
-8000B27C    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 49
-8000B280    andi    v1,v0,0x80                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 50
-8000B284    sll     v0,0x1                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 51
-8000B288    sb      v0,0x2(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 52
-8000B28C    lbu     v0,0x4(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 54
-8000B290    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 55
-8000B294    addiu   v0,0x1                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 56
-8000B298    sb      v0,0x4(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 57
-8000B29C    ori     r1,r0,0x80                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 58
-8000B2A0    beq     v1,r1,0x8000B2B0                                  ; src\renderText01\renderText_01_decompressCharacter.asm line 58
-8000B2A4    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 59
-8000B2A8 @read_left_nodes:                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 63
-8000B2A8    j       0x8000B2B8                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 64
-8000B2AC    lw      v0,0x28(sp)                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 65
-8000B2B0 @read_right_nodes:                                           ; src\renderText01\renderText_01_decompressCharacter.asm line 69
-8000B2B0    j       0x8000B2B8                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 70
-8000B2B4    lw      v0,0x2C(sp)                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 71
-8000B2B8 @load_node_offset:                                           ; src\renderText01\renderText_01_decompressCharacter.asm line 75
-8000B2B8    lhu     v1,0x0(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 76
-8000B2BC    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 77
-8000B2C0    sll     v1,0x1                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 79
-8000B2C4    addu    v0,v1                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 80
-8000B2C8    lhu     v0,0x0(v0)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 81
-8000B2CC    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 82
-8000B2D0    sh      v0,0x0(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 84
-8000B2D4 @check_character_node:                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 88
-8000B2D4    ori     v1,r0,-0x8000                                     ; src\renderText01\renderText_01_decompressCharacter.asm line 89
-8000B2D8    sltu    v0,v1                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 90
-8000B2DC    bnez    v0,0x8000B264                                     ; src\renderText01\renderText_01_decompressCharacter.asm line 91
-8000B2E0    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 92
-8000B2E4 @read_character:                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 96
-8000B2E4    lw      v0,0x30(sp)                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 97
-8000B2E8    lhu     v1,0x0(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 98
-8000B2EC    sh      zero,0x0(s5)                                      ; src\renderText01\renderText_01_decompressCharacter.asm line 99
-8000B2F0    subiu   v1,-0x8000                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 101
-8000B2F4    sll     v1,0x1                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 102
-8000B2F8    addu    v0,v1                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 103
-8000B2FC    lhu     s1,0x0(v0)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 105
-8000B300    lbu     s2,0x1(v0)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 106
-8000B304    ori     v1,r0,0x1                                         ; src\renderText01\renderText_01_decompressCharacter.asm line 108
-8000B308    sb      v1,0x8(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 109
-8000B30C    sh      s1,0x6(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 110
-8000B310    j       0x80034B24                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 112
-8000B314    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 113
-8000B318 @read_next_byte:                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 117
-8000B318    lw      v0,0x54(s0)                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 118
-8000B31C    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 119
-8000B320    lbu     v1,0x0(v0)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 120
-8000B324    addiu   v0,0x1                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 121
-8000B328    sw      v0,0x54(s0)                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 122
-8000B32C    sb      v1,0x2(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 123
-8000B330    sb      zero,0x4(s5)                                      ; src\renderText01\renderText_01_decompressCharacter.asm line 124
-8000B334    j       0x8000B264                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 126
-8000B338    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 127
+80051FC0 decompresscharactermdd:                                      ; src\renderText01\renderText_01_decompressCharacter.asm line 12
+80051FC0 @is_mdt_mode_char:                                           ; src\renderText01\renderText_01_decompressCharacter.asm line 14
+80051FC0    lhu     v0,0x34(sp)                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 15
+80051FC4    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 16
+80051FC8    beqz    v0,0x80051FDC                                     ; src\renderText01\renderText_01_decompressCharacter.asm line 17
+80051FCC    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 18
+80051FD0    lbu     s2,0x0(a0)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 20
+80051FD4    j       0x80034AE0                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 21
+80051FD8    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 22
+80051FDC @read_prev_char:                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 26
+80051FDC    lbu     v0,0x8(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 27
+80051FE0    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 28
+80051FE4    beqz    v0,0x80052000                                     ; src\renderText01\renderText_01_decompressCharacter.asm line 29
+80051FE8    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 30
+80051FEC    lhu     s1,0x6(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 32
+80051FF0    lbu     s2,0x6(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 33
+80051FF4    sb      zero,0x8(s5)                                      ; src\renderText01\renderText_01_decompressCharacter.asm line 34
+80051FF8    j       0x80034B24                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 36
+80051FFC    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 37
+80052000 @read_leaf:                                                  ; src\renderText01\renderText_01_decompressCharacter.asm line 41
+80052000    lb      v0,0x4(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 42
+80052004    ori     v1,r0,0x8                                         ; src\renderText01\renderText_01_decompressCharacter.asm line 43
+80052008    sltu    v0,v1                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 44
+8005200C    beqz    v0,0x800520B4                                     ; src\renderText01\renderText_01_decompressCharacter.asm line 45
+80052010    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 46
+80052014    lb      v0,0x2(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 48
+80052018    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 49
+8005201C    andi    v1,v0,0x80                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 50
+80052020    sll     v0,0x1                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 51
+80052024    sb      v0,0x2(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 52
+80052028    lbu     v0,0x4(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 54
+8005202C    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 55
+80052030    addiu   v0,0x1                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 56
+80052034    sb      v0,0x4(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 57
+80052038    ori     r1,r0,0x80                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 58
+8005203C    beq     v1,r1,0x8005204C                                  ; src\renderText01\renderText_01_decompressCharacter.asm line 58
+80052040    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 59
+80052044 @read_left_nodes:                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 63
+80052044    j       0x80052054                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 64
+80052048    lw      v0,0x28(sp)                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 65
+8005204C @read_right_nodes:                                           ; src\renderText01\renderText_01_decompressCharacter.asm line 69
+8005204C    j       0x80052054                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 70
+80052050    lw      v0,0x2C(sp)                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 71
+80052054 @load_node_offset:                                           ; src\renderText01\renderText_01_decompressCharacter.asm line 75
+80052054    lhu     v1,0x0(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 76
+80052058    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 77
+8005205C    sll     v1,0x1                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 79
+80052060    addu    v0,v1                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 80
+80052064    lhu     v0,0x0(v0)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 81
+80052068    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 82
+8005206C    sh      v0,0x0(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 84
+80052070 @check_character_node:                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 88
+80052070    ori     v1,r0,-0x8000                                     ; src\renderText01\renderText_01_decompressCharacter.asm line 89
+80052074    sltu    v0,v1                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 90
+80052078    bnez    v0,0x80052000                                     ; src\renderText01\renderText_01_decompressCharacter.asm line 91
+8005207C    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 92
+80052080 @read_character:                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 96
+80052080    lw      v0,0x30(sp)                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 97
+80052084    lhu     v1,0x0(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 98
+80052088    sh      zero,0x0(s5)                                      ; src\renderText01\renderText_01_decompressCharacter.asm line 99
+8005208C    subiu   v1,-0x8000                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 101
+80052090    sll     v1,0x1                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 102
+80052094    addu    v0,v1                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 103
+80052098    lhu     s1,0x0(v0)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 105
+8005209C    lbu     s2,0x1(v0)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 106
+800520A0    ori     v1,r0,0x1                                         ; src\renderText01\renderText_01_decompressCharacter.asm line 108
+800520A4    sb      v1,0x8(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 109
+800520A8    sh      s1,0x6(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 110
+800520AC    j       0x80034B24                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 112
+800520B0    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 113
+800520B4 @read_next_byte:                                             ; src\renderText01\renderText_01_decompressCharacter.asm line 117
+800520B4    lw      v0,0x54(s0)                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 118
+800520B8    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 119
+800520BC    lbu     v1,0x0(v0)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 120
+800520C0    addiu   v0,0x1                                            ; src\renderText01\renderText_01_decompressCharacter.asm line 121
+800520C4    sw      v0,0x54(s0)                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 122
+800520C8    sb      v1,0x2(s5)                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 123
+800520CC    sb      zero,0x4(s5)                                      ; src\renderText01\renderText_01_decompressCharacter.asm line 124
+800520D0    j       0x80052000                                        ; src\renderText01\renderText_01_decompressCharacter.asm line 126
+800520D4    nop                                                       ; src\renderText01\renderText_01_decompressCharacter.asm line 127
 80034DE4 @loc_80034de0:                                               ; src\renderText01\renderText_01_patches.asm line 47
-8000B33C return_01:                                                   ; src\renderText01\renderText_01_patches.asm line 49
-8000B33C    lw      ra,0x24(sp)                                       ; src\renderText01\renderText_01_patches.asm line 50
-8000B340    lw      s5,0x38(sp)                                       ; src\renderText01\renderText_01_patches.asm line 52
-8000B344    lw      s6,0x3C(sp)                                       ; src\renderText01\renderText_01_patches.asm line 53
-8000B348    lw      s7,0x40(sp)                                       ; src\renderText01\renderText_01_patches.asm line 54
-8000B34C    j       0x80034DE4                                        ; src\renderText01\renderText_01_patches.asm line 55
-8000B350    nop                                                       ; src\renderText01\renderText_01_patches.asm line 56
+800520D8 return_01:                                                   ; src\renderText01\renderText_01_patches.asm line 49
+800520D8    lw      ra,0x24(sp)                                       ; src\renderText01\renderText_01_patches.asm line 50
+800520DC    lw      s5,0x38(sp)                                       ; src\renderText01\renderText_01_patches.asm line 52
+800520E0    lw      s6,0x3C(sp)                                       ; src\renderText01\renderText_01_patches.asm line 53
+800520E4    lw      s7,0x40(sp)                                       ; src\renderText01\renderText_01_patches.asm line 54
+800520E8    j       0x80034DE4                                        ; src\renderText01\renderText_01_patches.asm line 55
+800520EC    nop                                                       ; src\renderText01\renderText_01_patches.asm line 56
 80034C2C @loc_80034c2c:                                               ; src\renderText01\renderText_01_patches.asm line 60
 80034C3C @loc_80034c3c:                                               ; src\renderText01\renderText_01_patches.asm line 61
 80034D90 @loc_80034d90:                                               ; src\renderText01\renderText_01_patches.asm line 62
-8000B354 addstringposition_01:                                        ; src\renderText01\renderText_01_patches.asm line 64
-8000B354    lhu     s6,0x34(sp)                                       ; src\renderText01\renderText_01_patches.asm line 65
-8000B358    nop                                                       ; src\renderText01\renderText_01_patches.asm line 66
-8000B35C    bnez    s6,0x8000B370                                     ; src\renderText01\renderText_01_patches.asm line 67
-8000B360    nop                                                       ; src\renderText01\renderText_01_patches.asm line 68
-8000B364 @add_stringposition_01_mdd:                                  ; src\renderText01\renderText_01_patches.asm line 70
-8000B364    sb      zero,0x8(s5)                                      ; src\renderText01\renderText_01_patches.asm line 71
-8000B368    j       0x80034D90                                        ; src\renderText01\renderText_01_patches.asm line 72
-8000B36C    nop                                                       ; src\renderText01\renderText_01_patches.asm line 73
-8000B370 @add_stringposition_01_mdt:                                  ; src\renderText01\renderText_01_patches.asm line 75
-8000B370    beqz    v0,0x8000B380                                     ; src\renderText01\renderText_01_patches.asm line 76
-8000B374    nop                                                       ; src\renderText01\renderText_01_patches.asm line 77
-8000B378    j       0x80034C2C                                        ; src\renderText01\renderText_01_patches.asm line 78
-8000B37C    nop                                                       ; src\renderText01\renderText_01_patches.asm line 79
-8000B380 @inc_01:                                                     ; src\renderText01\renderText_01_patches.asm line 81
-8000B380    j       0x80034C3C                                        ; src\renderText01\renderText_01_patches.asm line 82
-8000B384    nop                                                       ; src\renderText01\renderText_01_patches.asm line 83
+800520F0 addstringposition_01:                                        ; src\renderText01\renderText_01_patches.asm line 64
+800520F0    lhu     s6,0x34(sp)                                       ; src\renderText01\renderText_01_patches.asm line 65
+800520F4    nop                                                       ; src\renderText01\renderText_01_patches.asm line 66
+800520F8    bnez    s6,0x8005210C                                     ; src\renderText01\renderText_01_patches.asm line 67
+800520FC    nop                                                       ; src\renderText01\renderText_01_patches.asm line 68
+80052100 @add_stringposition_01_mdd:                                  ; src\renderText01\renderText_01_patches.asm line 70
+80052100    sb      zero,0x8(s5)                                      ; src\renderText01\renderText_01_patches.asm line 71
+80052104    j       0x80034D90                                        ; src\renderText01\renderText_01_patches.asm line 72
+80052108    nop                                                       ; src\renderText01\renderText_01_patches.asm line 73
+8005210C @add_stringposition_01_mdt:                                  ; src\renderText01\renderText_01_patches.asm line 75
+8005210C    beqz    v0,0x8005211C                                     ; src\renderText01\renderText_01_patches.asm line 76
+80052110    nop                                                       ; src\renderText01\renderText_01_patches.asm line 77
+80052114    j       0x80034C2C                                        ; src\renderText01\renderText_01_patches.asm line 78
+80052118    nop                                                       ; src\renderText01\renderText_01_patches.asm line 79
+8005211C @inc_01:                                                     ; src\renderText01\renderText_01_patches.asm line 81
+8005211C    j       0x80034C3C                                        ; src\renderText01\renderText_01_patches.asm line 82
+80052120    nop                                                       ; src\renderText01\renderText_01_patches.asm line 83
 80034CB4 @loc_80034cb4:                                               ; src\renderText01\renderText_01_patches.asm line 87
 80034CC4 @loc_80034cc4:                                               ; src\renderText01\renderText_01_patches.asm line 88
 80034CD4 @loc_80034cd4:                                               ; src\renderText01\renderText_01_patches.asm line 89
-8000B388 addstringposition_02:                                        ; src\renderText01\renderText_01_patches.asm line 91
-8000B388    lhu     s6,0x34(sp)                                       ; src\renderText01\renderText_01_patches.asm line 92
-8000B38C    nop                                                       ; src\renderText01\renderText_01_patches.asm line 93
-8000B390    bnez    s6,0x8000B3A4                                     ; src\renderText01\renderText_01_patches.asm line 94
-8000B394    nop                                                       ; src\renderText01\renderText_01_patches.asm line 95
-8000B398 @add_str_pos_2_mdd:                                          ; src\renderText01\renderText_01_patches.asm line 97
-8000B398    sb      zero,0x8(s5)                                      ; src\renderText01\renderText_01_patches.asm line 98
-8000B39C    j       0x80034CD4                                        ; src\renderText01\renderText_01_patches.asm line 99
-8000B3A0    nop                                                       ; src\renderText01\renderText_01_patches.asm line 100
-8000B3A4 @add_str_pos_2_mdt:                                          ; src\renderText01\renderText_01_patches.asm line 102
-8000B3A4    beqz    v0,0x8000B3B4                                     ; src\renderText01\renderText_01_patches.asm line 103
-8000B3A8    nop                                                       ; src\renderText01\renderText_01_patches.asm line 104
-8000B3AC    j       0x80034CB4                                        ; src\renderText01\renderText_01_patches.asm line 105
-8000B3B0    nop                                                       ; src\renderText01\renderText_01_patches.asm line 106
-8000B3B4 @inc_02:                                                     ; src\renderText01\renderText_01_patches.asm line 108
-8000B3B4    j       0x80034CC4                                        ; src\renderText01\renderText_01_patches.asm line 109
-8000B3B8    nop                                                       ; src\renderText01\renderText_01_patches.asm line 110
+80052124 addstringposition_02:                                        ; src\renderText01\renderText_01_patches.asm line 91
+80052124    lhu     s6,0x34(sp)                                       ; src\renderText01\renderText_01_patches.asm line 92
+80052128    nop                                                       ; src\renderText01\renderText_01_patches.asm line 93
+8005212C    bnez    s6,0x80052140                                     ; src\renderText01\renderText_01_patches.asm line 94
+80052130    nop                                                       ; src\renderText01\renderText_01_patches.asm line 95
+80052134 @add_str_pos_2_mdd:                                          ; src\renderText01\renderText_01_patches.asm line 97
+80052134    sb      zero,0x8(s5)                                      ; src\renderText01\renderText_01_patches.asm line 98
+80052138    j       0x80034CD4                                        ; src\renderText01\renderText_01_patches.asm line 99
+8005213C    nop                                                       ; src\renderText01\renderText_01_patches.asm line 100
+80052140 @add_str_pos_2_mdt:                                          ; src\renderText01\renderText_01_patches.asm line 102
+80052140    beqz    v0,0x80052150                                     ; src\renderText01\renderText_01_patches.asm line 103
+80052144    nop                                                       ; src\renderText01\renderText_01_patches.asm line 104
+80052148    j       0x80034CB4                                        ; src\renderText01\renderText_01_patches.asm line 105
+8005214C    nop                                                       ; src\renderText01\renderText_01_patches.asm line 106
+80052150 @inc_02:                                                     ; src\renderText01\renderText_01_patches.asm line 108
+80052150    j       0x80034CC4                                        ; src\renderText01\renderText_01_patches.asm line 109
+80052154    nop                                                       ; src\renderText01\renderText_01_patches.asm line 110
 80034D04 @loc_80034d04:                                               ; src\renderText01\renderText_01_patches.asm line 114
 80034D14 @loc_80034d14:                                               ; src\renderText01\renderText_01_patches.asm line 115
 80034D24 @loc_80034d24:                                               ; src\renderText01\renderText_01_patches.asm line 116
-8000B3BC addstringposition_03:                                        ; src\renderText01\renderText_01_patches.asm line 118
-8000B3BC    lhu     s6,0x34(sp)                                       ; src\renderText01\renderText_01_patches.asm line 119
-8000B3C0    nop                                                       ; src\renderText01\renderText_01_patches.asm line 120
-8000B3C4    bnez    s6,0x8000B3D8                                     ; src\renderText01\renderText_01_patches.asm line 121
-8000B3C8    nop                                                       ; src\renderText01\renderText_01_patches.asm line 122
-8000B3CC @add_str_pos_3_mdd:                                          ; src\renderText01\renderText_01_patches.asm line 124
-8000B3CC    sb      zero,0x8(s5)                                      ; src\renderText01\renderText_01_patches.asm line 125
-8000B3D0    j       0x80034D24                                        ; src\renderText01\renderText_01_patches.asm line 126
-8000B3D4    nop                                                       ; src\renderText01\renderText_01_patches.asm line 127
-8000B3D8 @add_str_pos_3_mdt:                                          ; src\renderText01\renderText_01_patches.asm line 129
-8000B3D8    beqz    v0,0x8000B3E8                                     ; src\renderText01\renderText_01_patches.asm line 130
-8000B3DC    nop                                                       ; src\renderText01\renderText_01_patches.asm line 131
-8000B3E0    j       0x80034D04                                        ; src\renderText01\renderText_01_patches.asm line 132
-8000B3E4    nop                                                       ; src\renderText01\renderText_01_patches.asm line 133
-8000B3E8 @inc_03:                                                     ; src\renderText01\renderText_01_patches.asm line 135
-8000B3E8    j       0x80034D14                                        ; src\renderText01\renderText_01_patches.asm line 136
-8000B3EC    nop                                                       ; src\renderText01\renderText_01_patches.asm line 137
-8000B3F0 rendertextcharacter01_save_mfoentry:                         ; src\renderText01\renderText_01_renderChar_patches.asm line 15
-8000B3F0    lbu     v1,0x7(s3)                                        ; src\renderText01\renderText_01_renderChar_patches.asm line 17
-8000B3F4    move    t6,s3                                             ; src\renderText01\renderText_01_renderChar_patches.asm line 18
-8000B3F8    jr      ra                                                ; src\renderText01\renderText_01_renderChar_patches.asm line 20
-8000B3FC    nop                                                       ; src\renderText01\renderText_01_renderChar_patches.asm line 21
-8000B400 rendertextcharacter01_patchcharwidth:                        ; src\renderText01\renderText_01_renderChar_patches.asm line 23
-8000B400    lbu     v0,0x5(t6)                                        ; src\renderText01\renderText_01_renderChar_patches.asm line 26
-8000B404    andi    s1,s2,0xFF                                        ; src\renderText01\renderText_01_renderChar_patches.asm line 27
-8000B408    jr      ra                                                ; src\renderText01\renderText_01_renderChar_patches.asm line 29
-8000B40C    nop                                                       ; src\renderText01\renderText_01_renderChar_patches.asm line 30
-8000B410 rendertext_loadimage_patchcharwidth:                         ; src\renderText01\renderText_01_renderChar_patches.asm line 32
-8000B410    lbu     v0,0x5(t6)                                        ; src\renderText01\renderText_01_renderChar_patches.asm line 35
-8000B414    andi    a2,0xFF                                           ; src\renderText01\renderText_01_renderChar_patches.asm line 36
-8000B418    jr      ra                                                ; src\renderText01\renderText_01_renderChar_patches.asm line 38
-8000B41C    nop                                                       ; src\renderText01\renderText_01_renderChar_patches.asm line 39
+80052158 addstringposition_03:                                        ; src\renderText01\renderText_01_patches.asm line 118
+80052158    lhu     s6,0x34(sp)                                       ; src\renderText01\renderText_01_patches.asm line 119
+8005215C    nop                                                       ; src\renderText01\renderText_01_patches.asm line 120
+80052160    bnez    s6,0x80052174                                     ; src\renderText01\renderText_01_patches.asm line 121
+80052164    nop                                                       ; src\renderText01\renderText_01_patches.asm line 122
+80052168 @add_str_pos_3_mdd:                                          ; src\renderText01\renderText_01_patches.asm line 124
+80052168    sb      zero,0x8(s5)                                      ; src\renderText01\renderText_01_patches.asm line 125
+8005216C    j       0x80034D24                                        ; src\renderText01\renderText_01_patches.asm line 126
+80052170    nop                                                       ; src\renderText01\renderText_01_patches.asm line 127
+80052174 @add_str_pos_3_mdt:                                          ; src\renderText01\renderText_01_patches.asm line 129
+80052174    beqz    v0,0x80052184                                     ; src\renderText01\renderText_01_patches.asm line 130
+80052178    nop                                                       ; src\renderText01\renderText_01_patches.asm line 131
+8005217C    j       0x80034D04                                        ; src\renderText01\renderText_01_patches.asm line 132
+80052180    nop                                                       ; src\renderText01\renderText_01_patches.asm line 133
+80052184 @inc_03:                                                     ; src\renderText01\renderText_01_patches.asm line 135
+80052184    j       0x80034D14                                        ; src\renderText01\renderText_01_patches.asm line 136
+80052188    nop                                                       ; src\renderText01\renderText_01_patches.asm line 137
+8005218C @rendertext_01_renderchar_patches:                           ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 95
+8005218C rendertextcharacter01_save_mfoentry:                         ; src\renderText01\renderText_01_renderChar_patches.asm line 15
+8005218C    lbu     v1,0x7(s3)                                        ; src\renderText01\renderText_01_renderChar_patches.asm line 17
+80052190    move    t6,s3                                             ; src\renderText01\renderText_01_renderChar_patches.asm line 18
+80052194    jr      ra                                                ; src\renderText01\renderText_01_renderChar_patches.asm line 20
+80052198    nop                                                       ; src\renderText01\renderText_01_renderChar_patches.asm line 21
+8005219C rendertextcharacter01_patchcharwidth:                        ; src\renderText01\renderText_01_renderChar_patches.asm line 23
+8005219C    lbu     v0,0x5(t6)                                        ; src\renderText01\renderText_01_renderChar_patches.asm line 26
+800521A0    andi    s1,s2,0xFF                                        ; src\renderText01\renderText_01_renderChar_patches.asm line 27
+800521A4    jr      ra                                                ; src\renderText01\renderText_01_renderChar_patches.asm line 29
+800521A8    nop                                                       ; src\renderText01\renderText_01_renderChar_patches.asm line 30
+800521AC rendertext_loadimage_patchcharwidth:                         ; src\renderText01\renderText_01_renderChar_patches.asm line 32
+800521AC    lbu     v0,0x5(t6)                                        ; src\renderText01\renderText_01_renderChar_patches.asm line 35
+800521B0    andi    a2,0xFF                                           ; src\renderText01\renderText_01_renderChar_patches.asm line 36
+800521B4    jr      ra                                                ; src\renderText01\renderText_01_renderChar_patches.asm line 38
+800521B8    nop                                                       ; src\renderText01\renderText_01_renderChar_patches.asm line 39
+800521BC @rendertext_02_getstringoffset:                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 98
 80035D74 get_string_entry:                                            ; src\renderText02\renderText_02_GetStringOffset.asm line 49
 80035D80 check_string_entry_2:                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 50
 80035E18 return_2:                                                    ; src\renderText02\renderText_02_GetStringOffset.asm line 51
 80035DD8 nextlinehandler_return:                                      ; src\renderText02\renderText_02_GetStringOffset.asm line 52
-8000B420 nextlinehandler_02:                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 56
-8000B420    andi    a1,-0x1                                           ; src\renderText02\renderText_02_GetStringOffset.asm line 57
-8000B424    ori     v1,r0,-0x92                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 58
-8000B428    bne     v1,a1,0x8000B444                                  ; src\renderText02\renderText_02_GetStringOffset.asm line 59
-8000B42C    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 60
-8000B430    sh      zero,0x24(s3)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 62
-8000B434    lhu     v1,0x26(s3)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 64
-8000B438    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 65
-8000B43C    addiu   v1,0x10                                           ; src\renderText02\renderText_02_GetStringOffset.asm line 66
-8000B440    sh      v1,0x26(s3)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 67
-8000B444 @return:                                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 69
-8000B444    andi    v1,a1,-0x1000                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 70
-8000B448    ori     v0,r0,-0x6000                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 71
-8000B44C    j       0x80035DD8                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 72
-8000B450    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 73
-8000B454 cleanup_02:                                                  ; src\renderText02\renderText_02_GetStringOffset.asm line 77
-8000B454 @get_label_width:                                            ; src\renderText02\renderText_02_GetStringOffset.asm line 79
-8000B454    lhu     v0,0x24(s3)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 80
-8000B458    lhu     v1,0x54(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 81
-8000B45C    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 82
-8000B460    subu    v1,v0,v1                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 83
-8000B464    sll     v1,0x2                                            ; src\renderText02\renderText_02_GetStringOffset.asm line 84
-8000B468 @cleanup:                                                    ; src\renderText02\renderText_02_GetStringOffset.asm line 86
-8000B468    lhu     v0,0x2(s2)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 87
-8000B46C    lw      s6,0x4C(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 88
-8000B470    lw      s7,0x50(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 89
-8000B474    j       0x80035E18                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 90
-8000B478    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 91
-8000B47C getstringoffset_02:                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 95
-8000B47C    sh      a2,0x54(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 97
-8000B480    sw      s6,0x4C(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 99
-8000B484    sw      s7,0x50(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 100
-8000B488    lw      s6,0x14(s3)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 102
-8000B48C    ori     v0,r0,0x4                                         ; src\renderText02\renderText_02_GetStringOffset.asm line 103
-8000B490    addu    s7,s6,v0                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 104
-8000B494 @is_mdt_file:                                                ; src\renderText02\renderText_02_GetStringOffset.asm line 106
-8000B494    lui     v1,0x54                                           ; src\renderText02\renderText_02_GetStringOffset.asm line 107
-8000B498    addiu   v1,0x444D                                         ; src\renderText02\renderText_02_GetStringOffset.asm line 107
-8000B49C    lw      v0,0x0(s6)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 108
-8000B4A0    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 109
-8000B4A4    bne     v0,v1,0x8000B4CC                                  ; src\renderText02\renderText_02_GetStringOffset.asm line 110
-8000B4A8    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 111
-8000B4AC @continue_mdt_mode:                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 113
-8000B4AC    ori     v0,r0,0x1                                         ; src\renderText02\renderText_02_GetStringOffset.asm line 114
-8000B4B0    sw      v0,0x28(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 115
-8000B4B4    lhu     a0,0x0(s2)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 117
-8000B4B8    lw      v0,0x1C(s3)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 118
-8000B4BC    lhu     v1,0x2(s2)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 119
-8000B4C0    addu    s0,v0,a0                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 120
-8000B4C4    j       0x80035D80                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 122
-8000B4C8    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 123
-8000B4CC @start_mdd_mode:                                             ; src\renderText02\renderText_02_GetStringOffset.asm line 127
-8000B4CC    sw      zero,0x28(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 128
-8000B4D0    sw      zero,0x2C(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 129
-8000B4D4    sw      zero,0x30(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 130
-8000B4D8    sw      zero,0x34(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 131
-8000B4DC    sw      zero,0x38(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 132
-8000B4E0    sw      zero,0x3C(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 133
-8000B4E4    sw      zero,0x40(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 134
-8000B4E8    sw      zero,0x44(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 135
-8000B4EC    sw      zero,0x48(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 136
-8000B4F0 @get_left_nodes_ptr:                                         ; src\renderText02\renderText_02_GetStringOffset.asm line 140
-8000B4F0    jal     0x8000B578                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 141
-8000B4F4    ori     v0,r0,0x14                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 142
-8000B4F8    sw      v0,0x2C(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 143
-8000B4FC @get_right_nodes_ptr:                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 147
-8000B4FC    jal     0x8000B578                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 148
-8000B500    ori     v0,r0,0x1C                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 149
-8000B504    sw      v0,0x30(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 150
-8000B508 @get_char_nodes_ptr:                                         ; src\renderText02\renderText_02_GetStringOffset.asm line 154
-8000B508    jal     0x8000B578                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 155
-8000B50C    ori     v0,r0,0x24                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 156
-8000B510    sw      v0,0x34(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 157
-8000B514 @load_bit_count:                                             ; src\renderText02\renderText_02_GetStringOffset.asm line 161
-8000B514    srl     v1,a1,0x2                                         ; src\renderText02\renderText_02_GetStringOffset.asm line 162
-8000B518    lw      v0,0xC(s6)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 163
-8000B51C    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 164
-8000B520    addu    v0,v0,s7                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 165
-8000B524    addu    v0,v0,v1                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 166
-8000B528    lbu     v0,0x0(v0)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 167
-8000B52C    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 168
-8000B530    sb      v0,0x40(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 169
-8000B534 @load_string_entry:                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 173
-8000B534    lw      v0,0x8(s6)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 174
-8000B538    lw      v1,0x10(s6)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 175
-8000B53C    addu    v0,s7                                             ; src\renderText02\renderText_02_GetStringOffset.asm line 176
-8000B540    addu    s2,v0,a1                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 177
-8000B544    addu    v0,v1,s7                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 179
-8000B548    lhu     a0,0x0(s2)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 180
-8000B54C    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 181
-8000B550    addu    s0,v0,a0                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 183
-8000B554 @load_first_string_byte:                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 187
-8000B554    lbu     v1,0x0(s0)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 188
-8000B558    addiu   s0,0x1                                            ; src\renderText02\renderText_02_GetStringOffset.asm line 189
-8000B55C    lbu     v0,0x40(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 191
-8000B560    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 192
-8000B564    sllv    v1,v0                                             ; src\renderText02\renderText_02_GetStringOffset.asm line 193
-8000B568    sb      v1,0x3C(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 194
-8000B56C    lhu     v1,0x2(s2)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 198
-8000B570    j       0x80035D80                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 199
-8000B574    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 200
-8000B578 @get_mdd_offset_to_v0:                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 205
-8000B578    add     v0,v0,s6                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 206
-8000B57C    lw      v1,0x0(v0)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 207
-8000B580    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 208
-8000B584    addu    v0,s7,v1                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 209
-8000B588    jr      ra                                                ; src\renderText02\renderText_02_GetStringOffset.asm line 210
-8000B58C    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 211
+800521BC nextlinehandler_02:                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 56
+800521BC    andi    a1,-0x1                                           ; src\renderText02\renderText_02_GetStringOffset.asm line 57
+800521C0    ori     v1,r0,-0x92                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 58
+800521C4    bne     v1,a1,0x800521E0                                  ; src\renderText02\renderText_02_GetStringOffset.asm line 59
+800521C8    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 60
+800521CC    sh      zero,0x24(s3)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 62
+800521D0    lhu     v1,0x26(s3)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 64
+800521D4    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 65
+800521D8    addiu   v1,0x10                                           ; src\renderText02\renderText_02_GetStringOffset.asm line 66
+800521DC    sh      v1,0x26(s3)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 67
+800521E0 @return:                                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 69
+800521E0    andi    v1,a1,-0x1000                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 70
+800521E4    ori     v0,r0,-0x6000                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 71
+800521E8    j       0x80035DD8                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 72
+800521EC    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 73
+800521F0 cleanup_02:                                                  ; src\renderText02\renderText_02_GetStringOffset.asm line 77
+800521F0 @get_label_width:                                            ; src\renderText02\renderText_02_GetStringOffset.asm line 79
+800521F0    lhu     v0,0x24(s3)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 80
+800521F4    lhu     v1,0x54(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 81
+800521F8    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 82
+800521FC    subu    v1,v0,v1                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 83
+80052200    sll     v1,0x2                                            ; src\renderText02\renderText_02_GetStringOffset.asm line 84
+80052204 @cleanup:                                                    ; src\renderText02\renderText_02_GetStringOffset.asm line 86
+80052204    lhu     v0,0x2(s2)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 87
+80052208    lw      s6,0x4C(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 88
+8005220C    lw      s7,0x50(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 89
+80052210    j       0x80035E18                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 90
+80052214    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 91
+80052218 getstringoffset_02:                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 95
+80052218    sh      a2,0x54(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 97
+8005221C    sw      s6,0x4C(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 99
+80052220    sw      s7,0x50(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 100
+80052224    lw      s6,0x14(s3)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 102
+80052228    ori     v0,r0,0x4                                         ; src\renderText02\renderText_02_GetStringOffset.asm line 103
+8005222C    addu    s7,s6,v0                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 104
+80052230 @is_mdt_file:                                                ; src\renderText02\renderText_02_GetStringOffset.asm line 106
+80052230    lui     v1,0x54                                           ; src\renderText02\renderText_02_GetStringOffset.asm line 107
+80052234    addiu   v1,0x444D                                         ; src\renderText02\renderText_02_GetStringOffset.asm line 107
+80052238    lw      v0,0x0(s6)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 108
+8005223C    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 109
+80052240    bne     v0,v1,0x80052268                                  ; src\renderText02\renderText_02_GetStringOffset.asm line 110
+80052244    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 111
+80052248 @continue_mdt_mode:                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 113
+80052248    ori     v0,r0,0x1                                         ; src\renderText02\renderText_02_GetStringOffset.asm line 114
+8005224C    sw      v0,0x28(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 115
+80052250    lhu     a0,0x0(s2)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 117
+80052254    lw      v0,0x1C(s3)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 118
+80052258    lhu     v1,0x2(s2)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 119
+8005225C    addu    s0,v0,a0                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 120
+80052260    j       0x80035D80                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 122
+80052264    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 123
+80052268 @start_mdd_mode:                                             ; src\renderText02\renderText_02_GetStringOffset.asm line 127
+80052268    sw      zero,0x28(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 128
+8005226C    sw      zero,0x2C(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 129
+80052270    sw      zero,0x30(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 130
+80052274    sw      zero,0x34(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 131
+80052278    sw      zero,0x38(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 132
+8005227C    sw      zero,0x3C(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 133
+80052280    sw      zero,0x40(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 134
+80052284    sw      zero,0x44(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 135
+80052288    sw      zero,0x48(sp)                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 136
+8005228C @get_left_nodes_ptr:                                         ; src\renderText02\renderText_02_GetStringOffset.asm line 140
+8005228C    jal     0x80052314                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 141
+80052290    ori     v0,r0,0x14                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 142
+80052294    sw      v0,0x2C(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 143
+80052298 @get_right_nodes_ptr:                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 147
+80052298    jal     0x80052314                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 148
+8005229C    ori     v0,r0,0x1C                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 149
+800522A0    sw      v0,0x30(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 150
+800522A4 @get_char_nodes_ptr:                                         ; src\renderText02\renderText_02_GetStringOffset.asm line 154
+800522A4    jal     0x80052314                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 155
+800522A8    ori     v0,r0,0x24                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 156
+800522AC    sw      v0,0x34(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 157
+800522B0 @load_bit_count:                                             ; src\renderText02\renderText_02_GetStringOffset.asm line 161
+800522B0    srl     v1,a1,0x2                                         ; src\renderText02\renderText_02_GetStringOffset.asm line 162
+800522B4    lw      v0,0xC(s6)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 163
+800522B8    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 164
+800522BC    addu    v0,v0,s7                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 165
+800522C0    addu    v0,v0,v1                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 166
+800522C4    lbu     v0,0x0(v0)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 167
+800522C8    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 168
+800522CC    sb      v0,0x40(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 169
+800522D0 @load_string_entry:                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 173
+800522D0    lw      v0,0x8(s6)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 174
+800522D4    lw      v1,0x10(s6)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 175
+800522D8    addu    v0,s7                                             ; src\renderText02\renderText_02_GetStringOffset.asm line 176
+800522DC    addu    s2,v0,a1                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 177
+800522E0    addu    v0,v1,s7                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 179
+800522E4    lhu     a0,0x0(s2)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 180
+800522E8    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 181
+800522EC    addu    s0,v0,a0                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 183
+800522F0 @load_first_string_byte:                                     ; src\renderText02\renderText_02_GetStringOffset.asm line 187
+800522F0    lbu     v1,0x0(s0)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 188
+800522F4    addiu   s0,0x1                                            ; src\renderText02\renderText_02_GetStringOffset.asm line 189
+800522F8    lbu     v0,0x40(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 191
+800522FC    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 192
+80052300    sllv    v1,v0                                             ; src\renderText02\renderText_02_GetStringOffset.asm line 193
+80052304    sb      v1,0x3C(sp)                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 194
+80052308    lhu     v1,0x2(s2)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 198
+8005230C    j       0x80035D80                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 199
+80052310    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 200
+80052314 @get_mdd_offset_to_v0:                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 205
+80052314    add     v0,v0,s6                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 206
+80052318    lw      v1,0x0(v0)                                        ; src\renderText02\renderText_02_GetStringOffset.asm line 207
+8005231C    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 208
+80052320    addu    v0,s7,v1                                          ; src\renderText02\renderText_02_GetStringOffset.asm line 209
+80052324    jr      ra                                                ; src\renderText02\renderText_02_GetStringOffset.asm line 210
+80052328    nop                                                       ; src\renderText02\renderText_02_GetStringOffset.asm line 211
+8005232C @rendertext_02_decompresscharacter:                          ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 100
 80035D80 check_string_entry:                                          ; src\renderText02\renderText_02_DecompressCharacter.asm line 28
 80035DD0 handle_character_02:                                         ; src\renderText02\renderText_02_DecompressCharacter.asm line 29
 80035D90 continue_read_character_02:                                  ; src\renderText02\renderText_02_DecompressCharacter.asm line 31
-8000B590 decompresscharacter_02:                                      ; src\renderText02\renderText_02_DecompressCharacter.asm line 35
-8000B590 @is_mdt_mode_char:                                           ; src\renderText02\renderText_02_DecompressCharacter.asm line 37
-8000B590    lhu     v0,0x28(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 38
-8000B594    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 39
-8000B598    beqz    v0,0x8000B5AC                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 40
-8000B59C    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 41
-8000B5A0    lbu     a0,0x0(s0)                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 43
-8000B5A4    j       0x80035D90                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 44
-8000B5A8    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 45
-8000B5AC @read_prev_char:                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 49
-8000B5AC    lbu     v0,0x48(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 50
-8000B5B0    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 51
-8000B5B4    beqz    v0,0x8000B5D0                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 52
-8000B5B8    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 53
-8000B5BC    lhu     s1,0x44(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 55
-8000B5C0    lbu     s2,0x44(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 56
-8000B5C4    sb      zero,0x48(sp)                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 57
-8000B5C8    j       0x80035DD0                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 59
-8000B5CC    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 60
-8000B5D0 @read_leaf:                                                  ; src\renderText02\renderText_02_DecompressCharacter.asm line 64
-8000B5D0    lb      v0,0x40(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 65
-8000B5D4    ori     v1,r0,0x8                                         ; src\renderText02\renderText_02_DecompressCharacter.asm line 66
-8000B5D8    sltu    v0,v1                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 67
-8000B5DC    beqz    v0,0x8000B678                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 68
-8000B5E0    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 69
-8000B5E4    lb      v0,0x3C(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 71
-8000B5E8    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 72
-8000B5EC    andi    v1,v0,0x80                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 73
-8000B5F0    sll     v0,0x1                                            ; src\renderText02\renderText_02_DecompressCharacter.asm line 74
-8000B5F4    sb      v0,0x3C(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 75
-8000B5F8    lbu     v0,0x40(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 77
-8000B5FC    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 78
-8000B600    addiu   v0,0x1                                            ; src\renderText02\renderText_02_DecompressCharacter.asm line 79
-8000B604    sb      v0,0x40(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 80
-8000B608    ori     r1,r0,0x80                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 81
-8000B60C    beq     v1,r1,0x8000B61C                                  ; src\renderText02\renderText_02_DecompressCharacter.asm line 81
-8000B610    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 82
-8000B614 @read_left_nodes:                                            ; src\renderText02\renderText_02_DecompressCharacter.asm line 86
-8000B614    j       0x8000B624                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 87
-8000B618    lw      v0,0x2C(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 88
-8000B61C @read_right_nodes:                                           ; src\renderText02\renderText_02_DecompressCharacter.asm line 92
-8000B61C    j       0x8000B624                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 93
-8000B620    lw      v0,0x30(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 94
-8000B624 @load_node_offset:                                           ; src\renderText02\renderText_02_DecompressCharacter.asm line 98
-8000B624    lhu     v1,0x38(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 99
-8000B628    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 100
-8000B62C    sll     v1,0x1                                            ; src\renderText02\renderText_02_DecompressCharacter.asm line 102
-8000B630    addu    v0,v1                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 103
-8000B634    lhu     v0,0x0(v0)                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 104
-8000B638    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 105
-8000B63C    sh      v0,0x38(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 107
-8000B640 @check_character_node:                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 111
-8000B640    ori     v1,r0,-0x8000                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 112
-8000B644    sltu    v0,v1                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 113
-8000B648    bnez    v0,0x8000B5D0                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 114
-8000B64C    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 115
-8000B650 @read_character:                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 119
-8000B650    lw      v0,0x34(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 120
-8000B654    lhu     v1,0x38(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 121
-8000B658    sh      zero,0x38(sp)                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 122
-8000B65C    subiu   v1,-0x8000                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 124
-8000B660    sll     v1,0x1                                            ; src\renderText02\renderText_02_DecompressCharacter.asm line 125
-8000B664    addu    v0,v1                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 126
-8000B668    lhu     a1,0x0(v0)                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 128
-8000B66C    lbu     a0,0x1(v0)                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 129
-8000B670    j       0x80035DD0                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 135
-8000B674    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 136
-8000B678 @read_next_byte:                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 140
-8000B678    lbu     v1,0x0(s0)                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 141
-8000B67C    addiu   s0,0x1                                            ; src\renderText02\renderText_02_DecompressCharacter.asm line 142
-8000B680    sb      v1,0x3C(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 143
-8000B684    sb      zero,0x40(sp)                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 144
-8000B688    j       0x8000B5D0                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 146
-8000B68C    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 147
-8000B690 rendertextmap_renderchar_savecharacterentry:                 ; src\renderText02\renderText_02_renderChar_patches.asm line 7
-8000B690    lbu     v1,0x7(a1)                                        ; src\renderText02\renderText_02_renderChar_patches.asm line 8
-8000B694    sw      a1,0x228(sp)                                      ; src\renderText02\renderText_02_renderChar_patches.asm line 9
-8000B698    jr      ra                                                ; src\renderText02\renderText_02_renderChar_patches.asm line 10
-8000B69C    nop                                                       ; src\renderText02\renderText_02_renderChar_patches.asm line 11
-8000B6A0 rendertextmap_renderchar_getcharwidth:                       ; src\renderText02\renderText_02_renderChar_patches.asm line 15
-8000B6A0    lw      v0,0x228(sp)                                      ; src\renderText02\renderText_02_renderChar_patches.asm line 16
-8000B6A4    nop                                                       ; src\renderText02\renderText_02_renderChar_patches.asm line 17
-8000B6A8    lbu     v0,0x5(v0)                                        ; src\renderText02\renderText_02_renderChar_patches.asm line 18
-8000B6AC    jr      ra                                                ; src\renderText02\renderText_02_renderChar_patches.asm line 19
-8000B6B0    nop                                                       ; src\renderText02\renderText_02_renderChar_patches.asm line 20
-8000B6B4 rendertextmap_renderchar_getcharwidthoffset:                 ; src\renderText02\renderText_02_renderChar_patches.asm line 24
-8000B6B4    lw      a0,0x228(sp)                                      ; src\renderText02\renderText_02_renderChar_patches.asm line 25
-8000B6B8    nop                                                       ; src\renderText02\renderText_02_renderChar_patches.asm line 26
-8000B6BC    lbu     a0,0x5(a0)                                        ; src\renderText02\renderText_02_renderChar_patches.asm line 27
-8000B6C0    jr      ra                                                ; src\renderText02\renderText_02_renderChar_patches.asm line 28
-8000B6C4    nop                                                       ; src\renderText02\renderText_02_renderChar_patches.asm line 29
-8000B6C8 inventory_setbaseoffset_setup:                               ; src\renderInventory_patches.asm line 2
-8000B6C8    j       0x8000B6D4                                        ; src\renderInventory_patches.asm line 3
-8000B6CC    move    v1,s0                                             ; src\renderInventory_patches.asm line 4
-8000B6D0 inventory_setbaseoffset_update:                              ; src\renderInventory_patches.asm line 6
-8000B6D0    move    v1,s1                                             ; src\renderInventory_patches.asm line 7
-8000B6D4 @setbaseoffset:                                              ; src\renderInventory_patches.asm line 9
-8000B6D4    lui     v0,-0x7FFF                                        ; src\renderInventory_patches.asm line 10
-8000B6D8    addiu   v0,-0x4908                                        ; src\renderInventory_patches.asm line 10
-8000B6DC    addu    v0,v1                                             ; src\renderInventory_patches.asm line 11
-8000B6E0    lbu     v0,0x0(v0)                                        ; src\renderInventory_patches.asm line 12
-8000B6E4    ori     v1,r0,0x130                                       ; src\renderInventory_patches.asm line 14
-8000B6E8    subu    v1,v0                                             ; src\renderInventory_patches.asm line 15
-8000B6EC    srl     a3,v1,0x1                                         ; src\renderInventory_patches.asm line 16
-8000B6F0    jr      ra                                                ; src\renderInventory_patches.asm line 20
-8000B6F4    nop                                                       ; src\renderInventory_patches.asm line 21
-8000B6F8 @inventorywidths:                                            ; src\renderInventory_patches.asm line 25
-8000B6F8 .byte 0x50                                                   ; src\renderInventory_patches.asm line 26
-8000B6F9 .byte 0x48                                                   ; src\renderInventory_patches.asm line 27
-8000B6FA .byte 0x40                                                   ; src\renderInventory_patches.asm line 28
-8000B6FB .byte 0x1C                                                   ; src\renderInventory_patches.asm line 29
-8000B6FC .byte 0x4E                                                   ; src\renderInventory_patches.asm line 30
-8000B6FD .byte 0x2C                                                   ; src\renderInventory_patches.asm line 31
-8000B6FE .byte 0x34                                                   ; src\renderInventory_patches.asm line 32
-8000B6FF .byte 0x60                                                   ; src\renderInventory_patches.asm line 33
-8000B700 .byte 0x54                                                   ; src\renderInventory_patches.asm line 34
-8000B701 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 35
-8000B702 .byte 0x50                                                   ; src\renderInventory_patches.asm line 36
-8000B703 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 37
-8000B704 .byte 0x78                                                   ; src\renderInventory_patches.asm line 38
-8000B705 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 39
-8000B706 .byte 0x50                                                   ; src\renderInventory_patches.asm line 40
-8000B707 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 41
-8000B708 .byte 0x84                                                   ; src\renderInventory_patches.asm line 42
-8000B709 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 43
-8000B70A .byte 0xAC                                                   ; src\renderInventory_patches.asm line 44
-8000B70B .byte 0x70                                                   ; src\renderInventory_patches.asm line 45
-8000B70C .byte 0xF0                                                   ; src\renderInventory_patches.asm line 46
-8000B70D .byte 0xBC                                                   ; src\renderInventory_patches.asm line 47
-8000B70E .byte 0x7C                                                   ; src\renderInventory_patches.asm line 48
-8000B70F .byte 0xF0                                                   ; src\renderInventory_patches.asm line 49
-8000B710 .byte 0x28                                                   ; src\renderInventory_patches.asm line 50
-8000B711 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 51
-8000B712 .byte 0xA4                                                   ; src\renderInventory_patches.asm line 52
-8000B713 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 53
-8000B714 .byte 0x5C                                                   ; src\renderInventory_patches.asm line 54
-8000B715 .byte 0x78                                                   ; src\renderInventory_patches.asm line 55
-8000B716 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 56
-8000B717 .byte 0x4C                                                   ; src\renderInventory_patches.asm line 57
-8000B718 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 58
-8000B719 .byte 0x48                                                   ; src\renderInventory_patches.asm line 59
-8000B71A .byte 0xDC                                                   ; src\renderInventory_patches.asm line 60
-8000B71B .byte 0x48                                                   ; src\renderInventory_patches.asm line 61
-8000B71C .byte 0xF0                                                   ; src\renderInventory_patches.asm line 62
-8000B71D .byte 0xF0                                                   ; src\renderInventory_patches.asm line 63
-8000B71E .byte 0xF0                                                   ; src\renderInventory_patches.asm line 64
-8000B71F .byte 0x00                                                   ; src\renderInventory_patches.asm line 65
-8000B720 clearnotebooktexture:                                        ; src\renderNotebookCharacter_patches.asm line 14
-8000B720    addiu   sp,-0x24                                          ; src\renderNotebookCharacter_patches.asm line 15
-8000B724    sw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 16
-8000B728    sw      a0,0x14(sp)                                       ; src\renderNotebookCharacter_patches.asm line 17
-8000B72C    sw      a1,0x18(sp)                                       ; src\renderNotebookCharacter_patches.asm line 18
-8000B730    sw      a2,0x1C(sp)                                       ; src\renderNotebookCharacter_patches.asm line 19
-8000B734    sw      a3,0x20(sp)                                       ; src\renderNotebookCharacter_patches.asm line 20
-8000B738    sh      a2,0x24(a0)                                       ; src\renderNotebookCharacter_patches.asm line 22
-8000B73C    sh      a3,0x26(a0)                                       ; src\renderNotebookCharacter_patches.asm line 23
-8000B740 @loop:                                                       ; src\renderNotebookCharacter_patches.asm line 25
-8000B740    lw      a0,0x14(sp)                                       ; src\renderNotebookCharacter_patches.asm line 26
-8000B744    jal     0x80035460                                        ; src\renderNotebookCharacter_patches.asm line 27
-8000B748    ori     a1,r0,-0x6000                                     ; src\renderNotebookCharacter_patches.asm line 28
-8000B74C    bnez    s5,0x8000B740                                     ; src\renderNotebookCharacter_patches.asm line 29
-8000B750    addiu   s5,-0x1                                           ; src\renderNotebookCharacter_patches.asm line 30
-8000B754    lw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 32
-8000B758    lw      a0,0x14(sp)                                       ; src\renderNotebookCharacter_patches.asm line 33
-8000B75C    lw      a1,0x18(sp)                                       ; src\renderNotebookCharacter_patches.asm line 34
-8000B760    lw      a2,0x1C(sp)                                       ; src\renderNotebookCharacter_patches.asm line 35
-8000B764    lw      a3,0x20(sp)                                       ; src\renderNotebookCharacter_patches.asm line 36
-8000B768    jr      ra                                                ; src\renderNotebookCharacter_patches.asm line 38
-8000B76C    addiu   sp,0x24                                           ; src\renderNotebookCharacter_patches.asm line 39
-8000B770 rendertextnotebookcharacter_00:                              ; src\renderNotebookCharacter_patches.asm line 42
-8000B770    addiu   sp,-0x18                                          ; src\renderNotebookCharacter_patches.asm line 43
-8000B774    sw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 44
-8000B778    sb      v0,0xA6(s1)                                       ; src\renderNotebookCharacter_patches.asm line 46
-8000B77C    jal     0x8000B720                                        ; src\renderNotebookCharacter_patches.asm line 47
-8000B780    ori     s5,r0,0xA0                                        ; src\renderNotebookCharacter_patches.asm line 48
-8000B784    jal     0x80035D38                                        ; src\renderNotebookCharacter_patches.asm line 50
-8000B788    nop                                                       ; src\renderNotebookCharacter_patches.asm line 51
-8000B78C    lw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 53
-8000B790    nop                                                       ; src\renderNotebookCharacter_patches.asm line 54
-8000B794    jr      ra                                                ; src\renderNotebookCharacter_patches.asm line 55
-8000B798    addiu   sp,0x18                                           ; src\renderNotebookCharacter_patches.asm line 56
-8000B79C rendertextnotebookcharacter_02:                              ; src\renderNotebookCharacter_patches.asm line 59
-8000B79C    addiu   sp,-0x18                                          ; src\renderNotebookCharacter_patches.asm line 60
-8000B7A0    sw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 61
-8000B7A4    move    a3,a2                                             ; src\renderNotebookCharacter_patches.asm line 63
-8000B7A8    jal     0x8000B720                                        ; src\renderNotebookCharacter_patches.asm line 64
-8000B7AC    ori     s5,r0,0xA0                                        ; src\renderNotebookCharacter_patches.asm line 65
-8000B7B0    jal     0x80035D38                                        ; src\renderNotebookCharacter_patches.asm line 67
-8000B7B4    nop                                                       ; src\renderNotebookCharacter_patches.asm line 68
-8000B7B8    lw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 70
-8000B7BC    nop                                                       ; src\renderNotebookCharacter_patches.asm line 71
-8000B7C0    jr      ra                                                ; src\renderNotebookCharacter_patches.asm line 72
-8000B7C4    addiu   sp,0x18                                           ; src\renderNotebookCharacter_patches.asm line 73
-8000B7C8 rendertextphonenumber_00:                                    ; src\renderNotebookCharacter_patches.asm line 75
-8000B7C8    addiu   sp,-0x18                                          ; src\renderNotebookCharacter_patches.asm line 76
-8000B7CC    sw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 77
-8000B7D0    jal     0x8000B720                                        ; src\renderNotebookCharacter_patches.asm line 79
-8000B7D4    ori     s5,r0,0x20                                        ; src\renderNotebookCharacter_patches.asm line 80
-8000B7D8    jal     0x80035D38                                        ; src\renderNotebookCharacter_patches.asm line 82
-8000B7DC    addiu   s1,0x1                                            ; src\renderNotebookCharacter_patches.asm line 83
-8000B7E0    lw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 85
-8000B7E4    nop                                                       ; src\renderNotebookCharacter_patches.asm line 86
-8000B7E8    jr      ra                                                ; src\renderNotebookCharacter_patches.asm line 87
-8000B7EC    addiu   sp,0x18                                           ; src\renderNotebookCharacter_patches.asm line 88
-8000B7F0 setupnotebookcursor:                                         ; src\renderNotebookCharacter_patches.asm line 90
-8000B7F0    ori     s3,r0,0x20                                        ; src\renderNotebookCharacter_patches.asm line 91
-8000B7F4    sb      zero,0x355(s4)                                    ; src\renderNotebookCharacter_patches.asm line 92
-8000B7F8    sh      s3,0x35A(s4)                                      ; src\renderNotebookCharacter_patches.asm line 93
-8000B7FC    j       0x8004EEA8                                        ; src\renderNotebookCharacter_patches.asm line 94
-8000B800    nop                                                       ; src\renderNotebookCharacter_patches.asm line 95
-8000B804 print_mem_manager_debug_info:                                ; src\memoryManagerAllocPatches.asm line 5
-8000B804    lw      a3,0x10(sp)                                       ; src\memoryManagerAllocPatches.asm line 7
-8000B808    addiu   sp,-0x1C                                          ; src\memoryManagerAllocPatches.asm line 9
-8000B80C    sw      v0,0x14(sp)                                       ; src\memoryManagerAllocPatches.asm line 10
-8000B810    sw      a0,0x10(sp)                                       ; src\memoryManagerAllocPatches.asm line 11
-8000B814    move    a2,a0                                             ; src\memoryManagerAllocPatches.asm line 14
-8000B818    lui     a0,-0x7FFF                                        ; src\memoryManagerAllocPatches.asm line 15
-8000B81C    addiu   a0,-0x47BC                                        ; src\memoryManagerAllocPatches.asm line 15
-8000B820    jal     0x8005143C                                        ; src\memoryManagerAllocPatches.asm line 16
-8000B824    move    a1,v0                                             ; src\memoryManagerAllocPatches.asm line 17
-8000B828    lw      v0,0x14(sp)                                       ; src\memoryManagerAllocPatches.asm line 19
-8000B82C    lw      a0,0x10(sp)                                       ; src\memoryManagerAllocPatches.asm line 20
-8000B830    addiu   sp,0x1C                                           ; src\memoryManagerAllocPatches.asm line 21
-8000B834    lw      ra,0x10(sp)                                       ; src\memoryManagerAllocPatches.asm line 23
-8000B838    nop                                                       ; src\memoryManagerAllocPatches.asm line 24
-8000B83C    jr      ra                                                ; src\memoryManagerAllocPatches.asm line 25
-8000B840    addiu   sp,0x18                                           ; src\memoryManagerAllocPatches.asm line 26
-8000B844 alloc_fmt:                                                   ; src\memoryManagerAllocPatches.asm line 29
-8000B844 .byte 0x41,0x4C,0x4C,0x4F,0x43,0x3A,0x20,0x25,0x78,0x2C,0x20,0x53,0x5A,0x3A,0x20,0x25,0x78,0x2C,0x20,0x72,0x61,0x3A,0x20,0x25,0x78,0x0A; src\memoryManagerAllocPatches.asm line 30
-8000B85E .endarea                                                     ; src\memoryManagerAllocPatches.asm line 30
-8000B85E .headersize 0x8000F800                                       ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 147
-8000FFEE .org 0x80014F8C                                              ; src\patches.asm line 4
+8005232C decompresscharacter_02:                                      ; src\renderText02\renderText_02_DecompressCharacter.asm line 35
+8005232C @is_mdt_mode_char:                                           ; src\renderText02\renderText_02_DecompressCharacter.asm line 37
+8005232C    lhu     v0,0x28(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 38
+80052330    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 39
+80052334    beqz    v0,0x80052348                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 40
+80052338    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 41
+8005233C    lbu     a0,0x0(s0)                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 43
+80052340    j       0x80035D90                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 44
+80052344    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 45
+80052348 @read_prev_char:                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 49
+80052348    lbu     v0,0x48(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 50
+8005234C    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 51
+80052350    beqz    v0,0x8005236C                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 52
+80052354    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 53
+80052358    lhu     s1,0x44(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 55
+8005235C    lbu     s2,0x44(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 56
+80052360    sb      zero,0x48(sp)                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 57
+80052364    j       0x80035DD0                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 59
+80052368    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 60
+8005236C @read_leaf:                                                  ; src\renderText02\renderText_02_DecompressCharacter.asm line 64
+8005236C    lb      v0,0x40(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 65
+80052370    ori     v1,r0,0x8                                         ; src\renderText02\renderText_02_DecompressCharacter.asm line 66
+80052374    sltu    v0,v1                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 67
+80052378    beqz    v0,0x80052414                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 68
+8005237C    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 69
+80052380    lb      v0,0x3C(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 71
+80052384    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 72
+80052388    andi    v1,v0,0x80                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 73
+8005238C    sll     v0,0x1                                            ; src\renderText02\renderText_02_DecompressCharacter.asm line 74
+80052390    sb      v0,0x3C(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 75
+80052394    lbu     v0,0x40(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 77
+80052398    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 78
+8005239C    addiu   v0,0x1                                            ; src\renderText02\renderText_02_DecompressCharacter.asm line 79
+800523A0    sb      v0,0x40(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 80
+800523A4    ori     r1,r0,0x80                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 81
+800523A8    beq     v1,r1,0x800523B8                                  ; src\renderText02\renderText_02_DecompressCharacter.asm line 81
+800523AC    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 82
+800523B0 @read_left_nodes:                                            ; src\renderText02\renderText_02_DecompressCharacter.asm line 86
+800523B0    j       0x800523C0                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 87
+800523B4    lw      v0,0x2C(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 88
+800523B8 @read_right_nodes:                                           ; src\renderText02\renderText_02_DecompressCharacter.asm line 92
+800523B8    j       0x800523C0                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 93
+800523BC    lw      v0,0x30(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 94
+800523C0 @load_node_offset:                                           ; src\renderText02\renderText_02_DecompressCharacter.asm line 98
+800523C0    lhu     v1,0x38(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 99
+800523C4    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 100
+800523C8    sll     v1,0x1                                            ; src\renderText02\renderText_02_DecompressCharacter.asm line 102
+800523CC    addu    v0,v1                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 103
+800523D0    lhu     v0,0x0(v0)                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 104
+800523D4    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 105
+800523D8    sh      v0,0x38(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 107
+800523DC @check_character_node:                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 111
+800523DC    ori     v1,r0,-0x8000                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 112
+800523E0    sltu    v0,v1                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 113
+800523E4    bnez    v0,0x8005236C                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 114
+800523E8    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 115
+800523EC @read_character:                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 119
+800523EC    lw      v0,0x34(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 120
+800523F0    lhu     v1,0x38(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 121
+800523F4    sh      zero,0x38(sp)                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 122
+800523F8    subiu   v1,-0x8000                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 124
+800523FC    sll     v1,0x1                                            ; src\renderText02\renderText_02_DecompressCharacter.asm line 125
+80052400    addu    v0,v1                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 126
+80052404    lhu     a1,0x0(v0)                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 128
+80052408    lbu     a0,0x1(v0)                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 129
+8005240C    j       0x80035DD0                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 135
+80052410    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 136
+80052414 @read_next_byte:                                             ; src\renderText02\renderText_02_DecompressCharacter.asm line 140
+80052414    lbu     v1,0x0(s0)                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 141
+80052418    addiu   s0,0x1                                            ; src\renderText02\renderText_02_DecompressCharacter.asm line 142
+8005241C    sb      v1,0x3C(sp)                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 143
+80052420    sb      zero,0x40(sp)                                     ; src\renderText02\renderText_02_DecompressCharacter.asm line 144
+80052424    j       0x8005236C                                        ; src\renderText02\renderText_02_DecompressCharacter.asm line 146
+80052428    nop                                                       ; src\renderText02\renderText_02_DecompressCharacter.asm line 147
+8005242C @rendertext_02_renderchar_patches:                           ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 102
+8005242C rendertextmap_renderchar_savecharacterentry:                 ; src\renderText02\renderText_02_renderChar_patches.asm line 7
+8005242C    lbu     v1,0x7(a1)                                        ; src\renderText02\renderText_02_renderChar_patches.asm line 8
+80052430    sw      a1,0x228(sp)                                      ; src\renderText02\renderText_02_renderChar_patches.asm line 9
+80052434    jr      ra                                                ; src\renderText02\renderText_02_renderChar_patches.asm line 10
+80052438    nop                                                       ; src\renderText02\renderText_02_renderChar_patches.asm line 11
+8005243C rendertextmap_renderchar_getcharwidth:                       ; src\renderText02\renderText_02_renderChar_patches.asm line 15
+8005243C    lw      v0,0x228(sp)                                      ; src\renderText02\renderText_02_renderChar_patches.asm line 16
+80052440    nop                                                       ; src\renderText02\renderText_02_renderChar_patches.asm line 17
+80052444    lbu     v0,0x5(v0)                                        ; src\renderText02\renderText_02_renderChar_patches.asm line 18
+80052448    jr      ra                                                ; src\renderText02\renderText_02_renderChar_patches.asm line 19
+8005244C    nop                                                       ; src\renderText02\renderText_02_renderChar_patches.asm line 20
+80052450 rendertextmap_renderchar_getcharwidthoffset:                 ; src\renderText02\renderText_02_renderChar_patches.asm line 24
+80052450    lw      a0,0x228(sp)                                      ; src\renderText02\renderText_02_renderChar_patches.asm line 25
+80052454    nop                                                       ; src\renderText02\renderText_02_renderChar_patches.asm line 26
+80052458    lbu     a0,0x5(a0)                                        ; src\renderText02\renderText_02_renderChar_patches.asm line 27
+8005245C    jr      ra                                                ; src\renderText02\renderText_02_renderChar_patches.asm line 28
+80052460    nop                                                       ; src\renderText02\renderText_02_renderChar_patches.asm line 29
+80052464 .endarea                                                     ; src\renderText02\renderText_02_renderChar_patches.asm line 29
+80052464 .org 0x80052550                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 109
+80052550 .area 0x000003FC                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 110
+80052550    jr      ra                                                ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 111
+80052554    nop                                                       ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 112
+80052558 @renderinventory_patches:                                    ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 114
+80052558 inventory_setbaseoffset_setup:                               ; src\renderInventory_patches.asm line 2
+80052558    j       0x80052564                                        ; src\renderInventory_patches.asm line 3
+8005255C    move    v1,s0                                             ; src\renderInventory_patches.asm line 4
+80052560 inventory_setbaseoffset_update:                              ; src\renderInventory_patches.asm line 6
+80052560    move    v1,s1                                             ; src\renderInventory_patches.asm line 7
+80052564 @setbaseoffset:                                              ; src\renderInventory_patches.asm line 9
+80052564    lui     v0,-0x7FFB                                        ; src\renderInventory_patches.asm line 10
+80052568    addiu   v0,0x2588                                         ; src\renderInventory_patches.asm line 10
+8005256C    addu    v0,v1                                             ; src\renderInventory_patches.asm line 11
+80052570    lbu     v0,0x0(v0)                                        ; src\renderInventory_patches.asm line 12
+80052574    ori     v1,r0,0x130                                       ; src\renderInventory_patches.asm line 14
+80052578    subu    v1,v0                                             ; src\renderInventory_patches.asm line 15
+8005257C    srl     a3,v1,0x1                                         ; src\renderInventory_patches.asm line 16
+80052580    jr      ra                                                ; src\renderInventory_patches.asm line 20
+80052584    nop                                                       ; src\renderInventory_patches.asm line 21
+80052588 @inventorywidths:                                            ; src\renderInventory_patches.asm line 25
+80052588 .byte 0x50                                                   ; src\renderInventory_patches.asm line 26
+80052589 .byte 0x48                                                   ; src\renderInventory_patches.asm line 27
+8005258A .byte 0x40                                                   ; src\renderInventory_patches.asm line 28
+8005258B .byte 0x1C                                                   ; src\renderInventory_patches.asm line 29
+8005258C .byte 0x4E                                                   ; src\renderInventory_patches.asm line 30
+8005258D .byte 0x2C                                                   ; src\renderInventory_patches.asm line 31
+8005258E .byte 0x34                                                   ; src\renderInventory_patches.asm line 32
+8005258F .byte 0x60                                                   ; src\renderInventory_patches.asm line 33
+80052590 .byte 0x54                                                   ; src\renderInventory_patches.asm line 34
+80052591 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 35
+80052592 .byte 0x50                                                   ; src\renderInventory_patches.asm line 36
+80052593 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 37
+80052594 .byte 0x78                                                   ; src\renderInventory_patches.asm line 38
+80052595 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 39
+80052596 .byte 0x50                                                   ; src\renderInventory_patches.asm line 40
+80052597 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 41
+80052598 .byte 0x84                                                   ; src\renderInventory_patches.asm line 42
+80052599 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 43
+8005259A .byte 0xAC                                                   ; src\renderInventory_patches.asm line 44
+8005259B .byte 0x70                                                   ; src\renderInventory_patches.asm line 45
+8005259C .byte 0xF0                                                   ; src\renderInventory_patches.asm line 46
+8005259D .byte 0xBC                                                   ; src\renderInventory_patches.asm line 47
+8005259E .byte 0x7C                                                   ; src\renderInventory_patches.asm line 48
+8005259F .byte 0xF0                                                   ; src\renderInventory_patches.asm line 49
+800525A0 .byte 0x28                                                   ; src\renderInventory_patches.asm line 50
+800525A1 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 51
+800525A2 .byte 0xA4                                                   ; src\renderInventory_patches.asm line 52
+800525A3 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 53
+800525A4 .byte 0x5C                                                   ; src\renderInventory_patches.asm line 54
+800525A5 .byte 0x78                                                   ; src\renderInventory_patches.asm line 55
+800525A6 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 56
+800525A7 .byte 0x4C                                                   ; src\renderInventory_patches.asm line 57
+800525A8 .byte 0xF0                                                   ; src\renderInventory_patches.asm line 58
+800525A9 .byte 0x48                                                   ; src\renderInventory_patches.asm line 59
+800525AA .byte 0xDC                                                   ; src\renderInventory_patches.asm line 60
+800525AB .byte 0x48                                                   ; src\renderInventory_patches.asm line 61
+800525AC .byte 0xF0                                                   ; src\renderInventory_patches.asm line 62
+800525AD .byte 0xF0                                                   ; src\renderInventory_patches.asm line 63
+800525AE .byte 0xF0                                                   ; src\renderInventory_patches.asm line 64
+800525AF .byte 0x00                                                   ; src\renderInventory_patches.asm line 65
+800525B0 @rendernotebookcharacter_patches:                            ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 116
+800525B0 clearnotebooktexture:                                        ; src\renderNotebookCharacter_patches.asm line 14
+800525B0    addiu   sp,-0x24                                          ; src\renderNotebookCharacter_patches.asm line 15
+800525B4    sw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 16
+800525B8    sw      a0,0x14(sp)                                       ; src\renderNotebookCharacter_patches.asm line 17
+800525BC    sw      a1,0x18(sp)                                       ; src\renderNotebookCharacter_patches.asm line 18
+800525C0    sw      a2,0x1C(sp)                                       ; src\renderNotebookCharacter_patches.asm line 19
+800525C4    sw      a3,0x20(sp)                                       ; src\renderNotebookCharacter_patches.asm line 20
+800525C8    sh      a2,0x24(a0)                                       ; src\renderNotebookCharacter_patches.asm line 22
+800525CC    sh      a3,0x26(a0)                                       ; src\renderNotebookCharacter_patches.asm line 23
+800525D0 @loop:                                                       ; src\renderNotebookCharacter_patches.asm line 25
+800525D0    lw      a0,0x14(sp)                                       ; src\renderNotebookCharacter_patches.asm line 26
+800525D4    jal     0x80035460                                        ; src\renderNotebookCharacter_patches.asm line 27
+800525D8    ori     a1,r0,-0x6000                                     ; src\renderNotebookCharacter_patches.asm line 28
+800525DC    bnez    s5,0x800525D0                                     ; src\renderNotebookCharacter_patches.asm line 29
+800525E0    addiu   s5,-0x1                                           ; src\renderNotebookCharacter_patches.asm line 30
+800525E4    lw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 32
+800525E8    lw      a0,0x14(sp)                                       ; src\renderNotebookCharacter_patches.asm line 33
+800525EC    lw      a1,0x18(sp)                                       ; src\renderNotebookCharacter_patches.asm line 34
+800525F0    lw      a2,0x1C(sp)                                       ; src\renderNotebookCharacter_patches.asm line 35
+800525F4    lw      a3,0x20(sp)                                       ; src\renderNotebookCharacter_patches.asm line 36
+800525F8    jr      ra                                                ; src\renderNotebookCharacter_patches.asm line 38
+800525FC    addiu   sp,0x24                                           ; src\renderNotebookCharacter_patches.asm line 39
+80052600 rendertextnotebookcharacter_00:                              ; src\renderNotebookCharacter_patches.asm line 42
+80052600    addiu   sp,-0x18                                          ; src\renderNotebookCharacter_patches.asm line 43
+80052604    sw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 44
+80052608    sb      v0,0xA6(s1)                                       ; src\renderNotebookCharacter_patches.asm line 46
+8005260C    jal     0x800525B0                                        ; src\renderNotebookCharacter_patches.asm line 47
+80052610    ori     s5,r0,0xA0                                        ; src\renderNotebookCharacter_patches.asm line 48
+80052614    jal     0x80035D38                                        ; src\renderNotebookCharacter_patches.asm line 50
+80052618    nop                                                       ; src\renderNotebookCharacter_patches.asm line 51
+8005261C    lw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 53
+80052620    nop                                                       ; src\renderNotebookCharacter_patches.asm line 54
+80052624    jr      ra                                                ; src\renderNotebookCharacter_patches.asm line 55
+80052628    addiu   sp,0x18                                           ; src\renderNotebookCharacter_patches.asm line 56
+8005262C rendertextnotebookcharacter_02:                              ; src\renderNotebookCharacter_patches.asm line 59
+8005262C    addiu   sp,-0x18                                          ; src\renderNotebookCharacter_patches.asm line 60
+80052630    sw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 61
+80052634    move    a3,a2                                             ; src\renderNotebookCharacter_patches.asm line 63
+80052638    jal     0x800525B0                                        ; src\renderNotebookCharacter_patches.asm line 64
+8005263C    ori     s5,r0,0xA0                                        ; src\renderNotebookCharacter_patches.asm line 65
+80052640    jal     0x80035D38                                        ; src\renderNotebookCharacter_patches.asm line 67
+80052644    nop                                                       ; src\renderNotebookCharacter_patches.asm line 68
+80052648    lw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 70
+8005264C    nop                                                       ; src\renderNotebookCharacter_patches.asm line 71
+80052650    jr      ra                                                ; src\renderNotebookCharacter_patches.asm line 72
+80052654    addiu   sp,0x18                                           ; src\renderNotebookCharacter_patches.asm line 73
+80052658 rendertextphonenumber_00:                                    ; src\renderNotebookCharacter_patches.asm line 75
+80052658    addiu   sp,-0x18                                          ; src\renderNotebookCharacter_patches.asm line 76
+8005265C    sw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 77
+80052660    jal     0x800525B0                                        ; src\renderNotebookCharacter_patches.asm line 79
+80052664    ori     s5,r0,0x20                                        ; src\renderNotebookCharacter_patches.asm line 80
+80052668    jal     0x80035D38                                        ; src\renderNotebookCharacter_patches.asm line 82
+8005266C    addiu   s1,0x1                                            ; src\renderNotebookCharacter_patches.asm line 83
+80052670    lw      ra,0x10(sp)                                       ; src\renderNotebookCharacter_patches.asm line 85
+80052674    nop                                                       ; src\renderNotebookCharacter_patches.asm line 86
+80052678    jr      ra                                                ; src\renderNotebookCharacter_patches.asm line 87
+8005267C    addiu   sp,0x18                                           ; src\renderNotebookCharacter_patches.asm line 88
+80052680 setupnotebookcursor:                                         ; src\renderNotebookCharacter_patches.asm line 90
+80052680    ori     s3,r0,0x20                                        ; src\renderNotebookCharacter_patches.asm line 91
+80052684    sb      zero,0x355(s4)                                    ; src\renderNotebookCharacter_patches.asm line 92
+80052688    sh      s3,0x35A(s4)                                      ; src\renderNotebookCharacter_patches.asm line 93
+8005268C    j       0x8004EEA8                                        ; src\renderNotebookCharacter_patches.asm line 94
+80052690    nop                                                       ; src\renderNotebookCharacter_patches.asm line 95
+80052694 @memorymanagerallocpatches:                                  ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 119
+80052694 .endarea                                                     ; src\memoryManagerAllocPatches.asm line 34
+80052694 .org 0x80014B5C                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 124
+80014B5C    nop                                                       ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 125
+80014B60    nop                                                       ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 126
+80014B64 .org 0x80014F8C                                              ; src\patches.asm line 4
 80014F8C    addiu   a0,r0,-0x9C                                       ; src\patches.asm line 5
 80014F90 .org 0x80014F9C                                              ; src\patches.asm line 6
 80014F9C    addiu   v1,r0,-0x5C                                       ; src\patches.asm line 7
@@ -719,7 +711,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 8004EE94 .org 0x8004EDC0                                              ; src\patches.asm line 22
 8004EDC0    ori     s3,r0,0x36                                        ; src\patches.asm line 23
 8004EDC4 .org 0x8004EEA0                                              ; src\patches.asm line 24
-8004EEA0    j       0x8000B7F0                                        ; src\patches.asm line 25
+8004EEA0    j       0x80052680                                        ; src\patches.asm line 25
 8004EEA4    nop                                                       ; src\patches.asm line 26
 8004EEA8 .org 0x800499B8                                              ; src\patches.asm line 33
 800499B8    ori     s2,r0,0xA8                                        ; src\patches.asm line 34
@@ -761,92 +753,92 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80033490    ori     v0,r0,0x30                                        ; src\patches.asm line 83
 80033494    ori     a3,r0,0xF0                                        ; src\patches.asm line 84
 80033498 .org 0x8004EAB4                                              ; src\patches.asm line 88
-8004EAB4    jal     0x8000B770                                        ; src\patches.asm line 89
+8004EAB4    jal     0x80052600                                        ; src\patches.asm line 89
 8004EAB8    nop                                                       ; src\patches.asm line 90
 8004EABC .org 0x8004EC8C                                              ; src\patches.asm line 92
-8004EC8C    jal     0x8000B79C                                        ; src\patches.asm line 93
+8004EC8C    jal     0x8005262C                                        ; src\patches.asm line 93
 8004EC90    nop                                                       ; src\patches.asm line 94
 8004EC94 .org 0x8004E8C4                                              ; src\patches.asm line 96
-8004E8C4    jal     0x8000B7C8                                        ; src\patches.asm line 97
+8004E8C4    jal     0x80052658                                        ; src\patches.asm line 97
 8004E8C8    nop                                                       ; src\patches.asm line 98
-8004E8CC .org 0x80079FBC                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 151
-80079FBC .area 0x00000118                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 152
+8004E8CC .org 0x80079FBC                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 135
+80079FBC .area 0x00000118                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 136
 80079FBC start:                                                       ; src\entryPoint.asm line 8
-80079FBC    lui     v0,-0x7FF6                                        ; src\entryPoint.asm line 11
-80079FC0    addiu   v0,0x3508                                         ; src\entryPoint.asm line 11
-80079FC4    lui     v1,-0x7FF0                                        ; src\entryPoint.asm line 16
-80079FC8    addiu   v1,0x1ED0                                         ; src\entryPoint.asm line 16
-80079FCC loc_80079fcc:                                                ; src\entryPoint.asm line 18
-80079FCC    sw      zero,0x0(v0)                                      ; src\entryPoint.asm line 19
-80079FD0    addiu   v0,0x4                                            ; src\entryPoint.asm line 20
-80079FD4    sltu    at,v0,v1                                          ; src\entryPoint.asm line 21
-80079FD8    bnez    at,0x80079FCC                                     ; src\entryPoint.asm line 22
-80079FDC    nop                                                       ; src\entryPoint.asm line 23
-80079FE0    lui     v0,-0x7FF6                                        ; src\entryPoint.asm line 24
-80079FE4    lw      v0,0x341C(v0)                                     ; src\entryPoint.asm line 24
-80079FE8    nop                                                       ; src\entryPoint.asm line 25
-80079FEC    addi    v0,-0x8                                           ; src\entryPoint.asm line 26
-80079FF0    lui     t0,-0x8000                                        ; src\entryPoint.asm line 27
-80079FF4    or      sp,v0,t0                                          ; src\entryPoint.asm line 28
-80079FF8    lui     a0,-0x7FF0                                        ; src\entryPoint.asm line 29
-80079FFC    addiu   a0,0x1ED0                                         ; src\entryPoint.asm line 29
-8007A000    sll     a0,0x3                                            ; src\entryPoint.asm line 30
-8007A004    srl     a0,0x3                                            ; src\entryPoint.asm line 31
-8007A008    lui     v1,-0x7FF6                                        ; src\entryPoint.asm line 32
-8007A00C    lw      v1,0x3420(v1)                                     ; src\entryPoint.asm line 32
-8007A010    nop                                                       ; src\entryPoint.asm line 33
-8007A014    subu    a1,v0,v1                                          ; src\entryPoint.asm line 34
-8007A018    subu    a1,a0                                             ; src\entryPoint.asm line 35
-8007A01C    lui     r1,-0x7FF6                                        ; src\entryPoint.asm line 36
-8007A020    sw      a1,0x3300(r1)                                     ; src\entryPoint.asm line 36
-8007A024    or      a0,t0                                             ; src\entryPoint.asm line 37
-8007A028    lui     r1,-0x7FF6                                        ; src\entryPoint.asm line 38
-8007A02C    sw      a0,0x32FC(r1)                                     ; src\entryPoint.asm line 38
-8007A030    lui     r1,-0x7FF6                                        ; src\entryPoint.asm line 39
-8007A034    sw      ra,0x39D0(r1)                                     ; src\entryPoint.asm line 39
-8007A038    lui     gp,-0x7FF6                                        ; src\entryPoint.asm line 40
-8007A03C    addiu   gp,0x341C                                         ; src\entryPoint.asm line 40
-8007A040    move    fp,sp                                             ; src\entryPoint.asm line 41
-8007A044    jal     0x8007A13C                                        ; src\entryPoint.asm line 42
-8007A048    addi    a0,0x4                                            ; src\entryPoint.asm line 43
-8007A04C    lui     ra,-0x7FF6                                        ; src\entryPoint.asm line 44
-8007A050    lw      ra,0x39D0(ra)                                     ; src\entryPoint.asm line 44
-8007A054    nop                                                       ; src\entryPoint.asm line 45
-8007A058    jal     0x8004F480                                        ; src\entryPoint.asm line 46
-8007A05C    nop                                                       ; src\entryPoint.asm line 47
-8007A060    break   0x1                                               ; src\entryPoint.asm line 48
-8007A064 __main:                                                      ; src\entryPoint.asm line 50
-8007A064    lui     t0,-0x7FF6                                        ; src\entryPoint.asm line 51
-8007A068    lw      t0,0x32F8(t0)                                     ; src\entryPoint.asm line 51
-8007A06C    addiu   sp,-0x10                                          ; src\entryPoint.asm line 52
-8007A070    sw      s0,0x4(sp)                                        ; src\entryPoint.asm line 53
-8007A074    sw      s1,0x8(sp)                                        ; src\entryPoint.asm line 54
-8007A078    sw      ra,0xC(sp)                                        ; src\entryPoint.asm line 55
-8007A07C    bnez    t0,0x8007A0B4                                     ; src\entryPoint.asm line 56
-8007A080    ori     t0,r0,0x1                                         ; src\entryPoint.asm line 57
-8007A084    lui     r1,-0x7FF6                                        ; src\entryPoint.asm line 58
-8007A088    sw      t0,0x32F8(r1)                                     ; src\entryPoint.asm line 58
-8007A08C    lui     s0,-0x7FFF                                        ; src\entryPoint.asm line 59
-8007A090    ori     s1,r0,0x0                                         ; src\entryPoint.asm line 60
-8007A094    beqz    s1,0x8007A0B4                                     ; src\entryPoint.asm line 61
-8007A098    nop                                                       ; src\entryPoint.asm line 62
-8007A09C loc_8007a0a4:                                                ; src\entryPoint.asm line 64
-8007A09C    lw      t0,0x0(s0)                                        ; src\entryPoint.asm line 65
-8007A0A0    addiu   s0,0x4                                            ; src\entryPoint.asm line 66
-8007A0A4    jalr    t0                                                ; src\entryPoint.asm line 67
-8007A0A8    addiu   s1,-0x1                                           ; src\entryPoint.asm line 68
-8007A0AC    bnez    s1,0x8007A09C                                     ; src\entryPoint.asm line 69
-8007A0B0    nop                                                       ; src\entryPoint.asm line 70
-8007A0B4 loc_8007a0bc:                                                ; src\entryPoint.asm line 72
-8007A0B4    lw      ra,0xC(sp)                                        ; src\entryPoint.asm line 74
-8007A0B8    lw      s1,0x8(sp)                                        ; src\entryPoint.asm line 75
-8007A0BC    lw      s0,0x4(sp)                                        ; src\entryPoint.asm line 76
-8007A0C0    addiu   sp,0x10                                           ; src\entryPoint.asm line 77
-8007A0C4    jr      ra                                                ; src\entryPoint.asm line 78
-8007A0C8    nop                                                       ; src\entryPoint.asm line 79
-8007A0CC .endarea                                                     ; src\entryPoint.asm line 79
-8007A0CC .org 0x8004F42C                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 156
-8004F42C .area 0x00000054                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 157
+80079FBC    lui     v0,-0x7FF6                                        ; src\entryPoint.asm line 9
+80079FC0    addiu   v0,0x3508                                         ; src\entryPoint.asm line 9
+80079FC4    lui     v1,-0x7FF0                                        ; src\entryPoint.asm line 10
+80079FC8    addiu   v1,0x1ED0                                         ; src\entryPoint.asm line 10
+80079FCC loc_80079fcc:                                                ; src\entryPoint.asm line 12
+80079FCC    sw      zero,0x0(v0)                                      ; src\entryPoint.asm line 13
+80079FD0    addiu   v0,0x4                                            ; src\entryPoint.asm line 14
+80079FD4    sltu    at,v0,v1                                          ; src\entryPoint.asm line 15
+80079FD8    bnez    at,0x80079FCC                                     ; src\entryPoint.asm line 16
+80079FDC    nop                                                       ; src\entryPoint.asm line 17
+80079FE0    lui     v0,-0x7FF6                                        ; src\entryPoint.asm line 18
+80079FE4    lw      v0,0x341C(v0)                                     ; src\entryPoint.asm line 18
+80079FE8    nop                                                       ; src\entryPoint.asm line 19
+80079FEC    addi    v0,-0x8                                           ; src\entryPoint.asm line 20
+80079FF0    lui     t0,-0x8000                                        ; src\entryPoint.asm line 21
+80079FF4    or      sp,v0,t0                                          ; src\entryPoint.asm line 22
+80079FF8    lui     a0,-0x7FF0                                        ; src\entryPoint.asm line 23
+80079FFC    addiu   a0,0x1ED0                                         ; src\entryPoint.asm line 23
+8007A000    sll     a0,0x3                                            ; src\entryPoint.asm line 24
+8007A004    srl     a0,0x3                                            ; src\entryPoint.asm line 25
+8007A008    lui     v1,-0x7FF6                                        ; src\entryPoint.asm line 26
+8007A00C    lw      v1,0x3420(v1)                                     ; src\entryPoint.asm line 26
+8007A010    nop                                                       ; src\entryPoint.asm line 27
+8007A014    subu    a1,v0,v1                                          ; src\entryPoint.asm line 28
+8007A018    subu    a1,a0                                             ; src\entryPoint.asm line 29
+8007A01C    lui     r1,-0x7FF6                                        ; src\entryPoint.asm line 30
+8007A020    sw      a1,0x3300(r1)                                     ; src\entryPoint.asm line 30
+8007A024    or      a0,t0                                             ; src\entryPoint.asm line 31
+8007A028    lui     r1,-0x7FF6                                        ; src\entryPoint.asm line 32
+8007A02C    sw      a0,0x32FC(r1)                                     ; src\entryPoint.asm line 32
+8007A030    lui     r1,-0x7FF6                                        ; src\entryPoint.asm line 33
+8007A034    sw      ra,0x39D0(r1)                                     ; src\entryPoint.asm line 33
+8007A038    lui     gp,-0x7FF6                                        ; src\entryPoint.asm line 34
+8007A03C    addiu   gp,0x341C                                         ; src\entryPoint.asm line 34
+8007A040    move    fp,sp                                             ; src\entryPoint.asm line 35
+8007A044    jal     0x8007A13C                                        ; src\entryPoint.asm line 36
+8007A048    addi    a0,0x4                                            ; src\entryPoint.asm line 37
+8007A04C    lui     ra,-0x7FF6                                        ; src\entryPoint.asm line 38
+8007A050    lw      ra,0x39D0(ra)                                     ; src\entryPoint.asm line 38
+8007A054    nop                                                       ; src\entryPoint.asm line 39
+8007A058    jal     0x8004F480                                        ; src\entryPoint.asm line 40
+8007A05C    nop                                                       ; src\entryPoint.asm line 41
+8007A060    break   0x1                                               ; src\entryPoint.asm line 42
+8007A064 __main:                                                      ; src\entryPoint.asm line 44
+8007A064    lui     t0,-0x7FF6                                        ; src\entryPoint.asm line 45
+8007A068    lw      t0,0x32F8(t0)                                     ; src\entryPoint.asm line 45
+8007A06C    addiu   sp,-0x10                                          ; src\entryPoint.asm line 46
+8007A070    sw      s0,0x4(sp)                                        ; src\entryPoint.asm line 47
+8007A074    sw      s1,0x8(sp)                                        ; src\entryPoint.asm line 48
+8007A078    sw      ra,0xC(sp)                                        ; src\entryPoint.asm line 49
+8007A07C    bnez    t0,0x8007A0B4                                     ; src\entryPoint.asm line 50
+8007A080    ori     t0,r0,0x1                                         ; src\entryPoint.asm line 51
+8007A084    lui     r1,-0x7FF6                                        ; src\entryPoint.asm line 52
+8007A088    sw      t0,0x32F8(r1)                                     ; src\entryPoint.asm line 52
+8007A08C    lui     s0,-0x7FFF                                        ; src\entryPoint.asm line 53
+8007A090    ori     s1,r0,0x0                                         ; src\entryPoint.asm line 54
+8007A094    beqz    s1,0x8007A0B4                                     ; src\entryPoint.asm line 55
+8007A098    nop                                                       ; src\entryPoint.asm line 56
+8007A09C loc_8007a0a4:                                                ; src\entryPoint.asm line 58
+8007A09C    lw      t0,0x0(s0)                                        ; src\entryPoint.asm line 59
+8007A0A0    addiu   s0,0x4                                            ; src\entryPoint.asm line 60
+8007A0A4    jalr    t0                                                ; src\entryPoint.asm line 61
+8007A0A8    addiu   s1,-0x1                                           ; src\entryPoint.asm line 62
+8007A0AC    bnez    s1,0x8007A09C                                     ; src\entryPoint.asm line 63
+8007A0B0    nop                                                       ; src\entryPoint.asm line 64
+8007A0B4 loc_8007a0bc:                                                ; src\entryPoint.asm line 66
+8007A0B4    lw      ra,0xC(sp)                                        ; src\entryPoint.asm line 68
+8007A0B8    lw      s1,0x8(sp)                                        ; src\entryPoint.asm line 69
+8007A0BC    lw      s0,0x4(sp)                                        ; src\entryPoint.asm line 70
+8007A0C0    addiu   sp,0x10                                           ; src\entryPoint.asm line 71
+8007A0C4    jr      ra                                                ; src\entryPoint.asm line 72
+8007A0C8    nop                                                       ; src\entryPoint.asm line 73
+8007A0CC .endarea                                                     ; src\entryPoint.asm line 73
+8007A0CC .org 0x8004F42C                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 140
+8004F42C .area 0x00000054                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 141
 8004F42C sub_8004f42c:                                                ; src\setupGame.asm line 6
 8004F42C    addiu   sp,-0x18                                          ; src\setupGame.asm line 7
 8004F430    sw      ra,0x10(sp)                                       ; src\setupGame.asm line 8
@@ -861,17 +853,17 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 8004F454    jal     0x8004FB7C                                        ; src\setupGame.asm line 17
 8004F458    nop                                                       ; src\setupGame.asm line 18
 8004F45C    lui     a0,-0x7FF0                                        ; src\setupGame.asm line 20
-8004F460    ori     a0,a0,-0x3400                                     ; src\setupGame.asm line 23
-8004F464    lui     a1,0xF                                            ; src\setupGame.asm line 28
-8004F468    jal     0x8004FC10                                        ; src\setupGame.asm line 29
-8004F46C    ori     a1,a1,0x1400                                      ; src\setupGame.asm line 33
-8004F470    lw      ra,0x10(sp)                                       ; src\setupGame.asm line 38
-8004F474    nop                                                       ; src\setupGame.asm line 39
-8004F478    jr      ra                                                ; src\setupGame.asm line 40
-8004F47C    addiu   sp,0x18                                           ; src\setupGame.asm line 41
-8004F480 .endarea                                                     ; src\setupGame.asm line 41
-8004F480 .org 0x800338D0                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 161
-800338D0 .area 0x000000F8                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 162
+8004F460    ori     a0,a0,-0x3400                                     ; src\setupGame.asm line 21
+8004F464    lui     a1,0xF                                            ; src\setupGame.asm line 23
+8004F468    jal     0x8004FC10                                        ; src\setupGame.asm line 24
+8004F46C    ori     a1,a1,0x1400                                      ; src\setupGame.asm line 25
+8004F470    lw      ra,0x10(sp)                                       ; src\setupGame.asm line 27
+8004F474    nop                                                       ; src\setupGame.asm line 28
+8004F478    jr      ra                                                ; src\setupGame.asm line 29
+8004F47C    addiu   sp,0x18                                           ; src\setupGame.asm line 30
+8004F480 .endarea                                                     ; src\setupGame.asm line 30
+8004F480 .org 0x800338D0                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 145
+800338D0 .area 0x000000F8                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 146
 80035BAC sub_80035bac:                                                ; src\setupGameTextContext.asm line 12
 80035BC4 sub_80035bc4:                                                ; src\setupGameTextContext.asm line 13
 80035C14 sub_80035c14:                                                ; src\setupGameTextContext.asm line 14
@@ -946,8 +938,8 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 800339C0    jr      ra                                                ; src\setupGameTextContext.asm line 94
 800339C4    addiu   sp,0x30                                           ; src\setupGameTextContext.asm line 95
 800339C8 .endarea                                                     ; src\setupGameTextContext.asm line 95
-800339C8 .org 0x800349C4                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 166
-800349C4 .area 0x0000043C                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 167
+800339C8 .org 0x800349C4                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 150
+800349C4 .area 0x0000043C                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 151
 80034E00 renderchar_80034e00:                                         ; src\renderText01\renderText_01.asm line 1
 80035ABC newline_80035ac0:                                            ; src\renderText01\renderText_01.asm line 2
 800349C4 @rendertext01_800349c4:                                      ; src\renderText01\renderText_01.asm line 42
@@ -960,7 +952,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 800349DC    sw      s4,0x20(sp)                                       ; src\renderText01\renderText_01.asm line 49
 800349E0    sw      s2,0x18(sp)                                       ; src\renderText01\renderText_01.asm line 50
 800349E4    sw      s1,0x14(sp)                                       ; src\renderText01\renderText_01.asm line 51
-800349E8    j       0x8000B100                                        ; src\renderText01\renderText_01.asm line 54
+800349E8    j       0x80051E9C                                        ; src\renderText01\renderText_01.asm line 54
 800349EC @start_mdt_read:                                             ; src\renderText01\renderText_01.asm line 59
 800349EC    lw      v0,0x8(s3)                                        ; src\renderText01\renderText_01.asm line 60
 800349F0    sll     a1,a2,0x2                                         ; src\renderText01\renderText_01.asm line 61
@@ -999,7 +991,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80034A64    nop                                                       ; src\renderText01\renderText_01.asm line 100
 80034A68    bnez    v0,0x80034A88                                     ; src\renderText01\renderText_01.asm line 101
 80034A6C    sw      zero,0x6C(s0)                                     ; src\renderText01\renderText_01.asm line 102
-80034A70    j       0x8000B1B0                                        ; src\renderText01\renderText_01.asm line 105
+80034A70    j       0x80051F4C                                        ; src\renderText01\renderText_01.asm line 105
 80034A74 @load_mdt_offset:                                            ; src\renderText01\renderText_01.asm line 110
 80034A74    lhu     v1,0x0(s4)                                        ; src\renderText01\renderText_01.asm line 111
 80034A78    lw      v0,0x8(v0)                                        ; src\renderText01\renderText_01.asm line 112
@@ -1031,7 +1023,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80034AD0    addu    v1,v0                                             ; src\renderText01\renderText_01.asm line 141
 80034AD4    sh      v1,0x60(s0)                                       ; src\renderText01\renderText_01.asm line 142
 80034AD8 @read_character:                                             ; src\renderText01\renderText_01.asm line 144
-80034AD8    j       0x8000B224                                        ; src\renderText01\renderText_01.asm line 147
+80034AD8    j       0x80051FC0                                        ; src\renderText01\renderText_01.asm line 147
 80034ADC    nop                                                       ; src\renderText01\renderText_01.asm line 148
 80034AE0 @continue_read_character:                                    ; src\renderText01\renderText_01.asm line 154
 80034AE0    andi    v0,s2,0x80                                        ; src\renderText01\renderText_01.asm line 155
@@ -1121,7 +1113,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80034C18    addiu   v1,0x1                                            ; src\renderText01\renderText_01.asm line 245
 80034C1C    sw      v0,0x68(s0)                                       ; src\renderText01\renderText_01.asm line 246
 80034C20    andi    v0,s2,0x80                                        ; src\renderText01\renderText_01.asm line 247
-80034C24    j       0x8000B354                                        ; src\renderText01\renderText_01.asm line 250
+80034C24    j       0x800520F0                                        ; src\renderText01\renderText_01.asm line 250
 80034C28    sh      v1,0x50(s0)                                       ; src\renderText01\renderText_01.asm line 251
 80034C2C @loc_80034c2c:                                               ; src\renderText01\renderText_01.asm line 257
 80034C2C    lw      v0,0x54(s0)                                       ; src\renderText01\renderText_01.asm line 258
@@ -1159,7 +1151,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80034CA0    addiu   v0,0x1                                            ; src\renderText01\renderText_01.asm line 294
 80034CA4    sh      v0,0x50(s0)                                       ; src\renderText01\renderText_01.asm line 295
 80034CA8    andi    v0,s2,0x80                                        ; src\renderText01\renderText_01.asm line 296
-80034CAC    j       0x8000B388                                        ; src\renderText01\renderText_01.asm line 299
+80034CAC    j       0x80052124                                        ; src\renderText01\renderText_01.asm line 299
 80034CB0    nop                                                       ; src\renderText01\renderText_01.asm line 300
 80034CB4 @loc_80034cb4:                                               ; src\renderText01\renderText_01.asm line 306
 80034CB4    lw      v0,0x54(s0)                                       ; src\renderText01\renderText_01.asm line 307
@@ -1184,7 +1176,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80034CF0    addiu   v0,0x1                                            ; src\renderText01\renderText_01.asm line 331
 80034CF4    sh      v0,0x50(s0)                                       ; src\renderText01\renderText_01.asm line 332
 80034CF8    andi    v0,s2,0x80                                        ; src\renderText01\renderText_01.asm line 333
-80034CFC    j       0x8000B3BC                                        ; src\renderText01\renderText_01.asm line 336
+80034CFC    j       0x80052158                                        ; src\renderText01\renderText_01.asm line 336
 80034D00    nop                                                       ; src\renderText01\renderText_01.asm line 337
 80034D04 @loc_80034d04:                                               ; src\renderText01\renderText_01.asm line 343
 80034D04    lw      v0,0x54(s0)                                       ; src\renderText01\renderText_01.asm line 344
@@ -1252,7 +1244,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80034DD8    sh      zero,0x50(s0)                                     ; src\renderText01\renderText_01.asm line 417
 80034DDC    sw      zero,0x54(s0)                                     ; src\renderText01\renderText_01.asm line 418
 80034DE0 @loc_80034de0:                                               ; src\renderText01\renderText_01.asm line 420
-80034DE0    j       0x8000B33C                                        ; src\renderText01\renderText_01.asm line 423
+80034DE0    j       0x800520D8                                        ; src\renderText01\renderText_01.asm line 423
 80034DE4    lw      s4,0x20(sp)                                       ; src\renderText01\renderText_01.asm line 428
 80034DE8    lw      s3,0x1C(sp)                                       ; src\renderText01\renderText_01.asm line 429
 80034DEC    lw      s2,0x18(sp)                                       ; src\renderText01\renderText_01.asm line 430
@@ -1261,8 +1253,8 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80034DF8    jr      ra                                                ; src\renderText01\renderText_01.asm line 433
 80034DFC    addiu   sp,0x44                                           ; src\renderText01\renderText_01.asm line 434
 80034E00 .endarea                                                     ; src\renderText01\renderText_01.asm line 434
-80034E00 .org 0x80034E00                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 171
-80034E00 .area 0x00000230                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 172
+80034E00 .org 0x80034E00                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 155
+80034E00 .area 0x00000230                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 156
 80034E00 rendertextcharacter01:                                       ; src\renderText01\renderText_01_renderChar.asm line 47
 80034E00    addiu   sp,-0x248                                         ; src\renderText01\renderText_01_renderChar.asm line 48
 80034E04    sw      s0,0x220(sp)                                      ; src\renderText01\renderText_01_renderChar.asm line 49
@@ -1328,7 +1320,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80034EEC    lw      v1,0x4(s0)                                        ; src\renderText01\renderText_01_renderChar.asm line 118
 80034EF0    sll     v0,0x3                                            ; src\renderText01\renderText_01_renderChar.asm line 119
 80034EF4    addu    s3,v1,v0                                          ; src\renderText01\renderText_01_renderChar.asm line 120
-80034EF8    jal     0x8000B3F0                                        ; src\renderText01\renderText_01_renderChar.asm line 123
+80034EF8    jal     0x8005218C                                        ; src\renderText01\renderText_01_renderChar.asm line 123
 80034EFC    nop                                                       ; src\renderText01\renderText_01_renderChar.asm line 124
 80034F00    andi    v0,v1,0x1                                         ; src\renderText01\renderText_01_renderChar.asm line 130
 80034F04    bnez    v0,0x80034F1C                                     ; src\renderText01\renderText_01_renderChar.asm line 131
@@ -1338,7 +1330,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80034F14    ori     s2,r0,0x1                                         ; src\renderText01\renderText_01_renderChar.asm line 135
 80034F18    ori     s2,r0,0x2                                         ; src\renderText01\renderText_01_renderChar.asm line 136
 80034F1C @loadmfocharentrydata:                                       ; src\renderText01\renderText_01_renderChar.asm line 138
-80034F1C    jal     0x8000B400                                        ; src\renderText01\renderText_01_renderChar.asm line 141
+80034F1C    jal     0x8005219C                                        ; src\renderText01\renderText_01_renderChar.asm line 141
 80034F20    nop                                                       ; src\renderText01\renderText_01_renderChar.asm line 142
 80034F24    mult    v0,s1                                             ; src\renderText01\renderText_01_renderChar.asm line 148
 80034F28    lw      v1,0xC(s0)                                        ; src\renderText01\renderText_01_renderChar.asm line 149
@@ -1415,8 +1407,8 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80035028    jr      ra                                                ; src\renderText01\renderText_01_renderChar.asm line 229
 8003502C    addiu   sp,0x248                                          ; src\renderText01\renderText_01_renderChar.asm line 230
 80035030 .endarea                                                     ; src\renderText01\renderText_01_renderChar.asm line 230
-80035030 .org 0x8003629C                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 176
-8003629C .area 0x000000B8                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 177
+80035030 .org 0x8003629C                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 160
+8003629C .area 0x000000B8                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 161
 8003629C rendertext_clampposition:                                    ; src\renderText01\renderText_01_renderChar_clampPosition.asm line 17
 8003629C    move    a3,a0                                             ; src\renderText01\renderText_01_renderChar_clampPosition.asm line 18
 800362A0    andi    a1,-0x1                                           ; src\renderText01\renderText_01_renderChar_clampPosition.asm line 19
@@ -1469,8 +1461,8 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 8003634C    jr      ra                                                ; src\renderText01\renderText_01_renderChar_clampPosition.asm line 70
 80036350    nop                                                       ; src\renderText01\renderText_01_renderChar_clampPosition.asm line 71
 80036354 .endarea                                                     ; src\renderText01\renderText_01_renderChar_clampPosition.asm line 71
-80036354 .org 0x80036354                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 181
-80036354 .area 0x00000088                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 182
+80036354 .org 0x80036354                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 165
+80036354 .area 0x00000088                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 166
 80036354 rendertext_loadimage:                                        ; src\renderText01\renderText_01_renderChar_loadImage.asm line 23
 80036354    addiu   sp,-0x20                                          ; src\renderText01\renderText_01_renderChar_loadImage.asm line 24
 80036358    move    a3,a0                                             ; src\renderText01\renderText_01_renderChar_loadImage.asm line 25
@@ -1489,7 +1481,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 8003638C    sll     v0,0x8                                            ; src\renderText01\renderText_01_renderChar_loadImage.asm line 39
 80036390    addu    v1,v0                                             ; src\renderText01\renderText_01_renderChar_loadImage.asm line 40
 80036394    sh      v1,0x12(sp)                                       ; src\renderText01\renderText_01_renderChar_loadImage.asm line 41
-80036398    jal     0x8000B410                                        ; src\renderText01\renderText_01_renderChar_loadImage.asm line 44
+80036398    jal     0x800521AC                                        ; src\renderText01\renderText_01_renderChar_loadImage.asm line 44
 8003639C    nop                                                       ; src\renderText01\renderText_01_renderChar_loadImage.asm line 45
 800363A0    mult    v0,a2                                             ; src\renderText01\renderText_01_renderChar_loadImage.asm line 51
 800363A4    mflo    v0                                                ; src\renderText01\renderText_01_renderChar_loadImage.asm line 52
@@ -1508,8 +1500,8 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 800363D4    jr      ra                                                ; src\renderText01\renderText_01_renderChar_loadImage.asm line 66
 800363D8    addiu   sp,0x20                                           ; src\renderText01\renderText_01_renderChar_loadImage.asm line 67
 800363DC .endarea                                                     ; src\renderText01\renderText_01_renderChar_loadImage.asm line 67
-800363DC .org 0x80035030                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 186
-80035030 .area 0x00000238                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 187
+800363DC .org 0x80035030                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 170
+80035030 .area 0x00000238                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 171
 80035030 rendertextsub01_04:                                          ; src\renderText01\renderText_01_setUvPolyFt4_MfoFonts.asm line 10
 80035030    addiu   sp,-0x28                                          ; src\renderText01\renderText_01_setUvPolyFt4_MfoFonts.asm line 11
 80035034    sw      s1,0x14(sp)                                       ; src\renderText01\renderText_01_setUvPolyFt4_MfoFonts.asm line 12
@@ -1661,8 +1653,8 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80035260    jr      ra                                                ; src\renderText01\renderText_01_setUvPolyFt4_MfoFonts.asm line 182
 80035264    addiu   sp,0x28                                           ; src\renderText01\renderText_01_setUvPolyFt4_MfoFonts.asm line 183
 80035268 .endarea                                                     ; src\renderText01\renderText_01_setUvPolyFt4_MfoFonts.asm line 183
-80035268 .org 0x80035D38                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 191
-80035D38 .area 0x000000FC                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 192
+80035268 .org 0x80035D38                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 175
+80035D38 .area 0x000000FC                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 176
 80035460 rendertext02_renderchar:                                     ; src\renderText02\renderText_02.asm line 9
 80035D38 rendertext02_80035d38:                                       ; src\renderText02\renderText_02.asm line 53
 80035D38    addiu   sp,-0x58                                          ; src\renderText02\renderText_02.asm line 54
@@ -1680,7 +1672,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80035D64    sh      a2,0x24(s3)                                       ; src\renderText02\renderText_02.asm line 67
 80035D68    sh      a3,0x26(s3)                                       ; src\renderText02\renderText_02.asm line 68
 80035D6C    addu    s2,v0,a1                                          ; src\renderText02\renderText_02.asm line 69
-80035D70    j       0x8000B47C                                        ; src\renderText02\renderText_02.asm line 72
+80035D70    j       0x80052218                                        ; src\renderText02\renderText_02.asm line 72
 80035D74    lw      v0,0x1C(s3)                                       ; src\renderText02\renderText_02.asm line 77
 80035D78    lhu     v1,0x2(s2)                                        ; src\renderText02\renderText_02.asm line 78
 80035D7C    nop                                                       ; src\renderText02\renderText_02.asm line 79
@@ -1688,7 +1680,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80035D80    beqz    v1,0x80035E14                                     ; src\renderText02\renderText_02.asm line 82
 80035D84    nop                                                       ; src\renderText02\renderText_02.asm line 83
 80035D88 @readcharacter_80035d88:                                     ; src\renderText02\renderText_02.asm line 85
-80035D88    j       0x8000B590                                        ; src\renderText02\renderText_02.asm line 88
+80035D88    j       0x8005232C                                        ; src\renderText02\renderText_02.asm line 88
 80035D8C    nop                                                       ; src\renderText02\renderText_02.asm line 93
 80035D90    andi    v0,a0,0x80                                        ; src\renderText02\renderText_02.asm line 94
 80035D94    beqz    v0,0x80035DAC                                     ; src\renderText02\renderText_02.asm line 95
@@ -1709,7 +1701,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80035DCC @checkcharactercode_80035dcc:                                ; src\renderText02\renderText_02.asm line 113
 80035DCC    or      a1,v0,v1                                          ; src\renderText02\renderText_02.asm line 114
 80035DD0 @handle_character_02:                                        ; src\renderText02\renderText_02.asm line 116
-80035DD0    j       0x8000B420                                        ; src\renderText02\renderText_02.asm line 118
+80035DD0    j       0x800521BC                                        ; src\renderText02\renderText_02.asm line 118
 80035DD4    nop                                                       ; src\renderText02\renderText_02.asm line 119
 80035DD8    bne     v1,v0,0x80035DE8                                  ; src\renderText02\renderText_02.asm line 125
 80035DDC    andi    v1,a1,-0x100                                      ; src\renderText02\renderText_02.asm line 126
@@ -1729,7 +1721,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80035E0C    bnez    v0,0x80035D88                                     ; src\renderText02\renderText_02.asm line 142
 80035E10    nop                                                       ; src\renderText02\renderText_02.asm line 143
 80035E14 @return_80035e14:                                            ; src\renderText02\renderText_02.asm line 145
-80035E14    j       0x8000B454                                        ; src\renderText02\renderText_02.asm line 148
+80035E14    j       0x800521F0                                        ; src\renderText02\renderText_02.asm line 148
 80035E18    lw      ra,0x20(sp)                                       ; src\renderText02\renderText_02.asm line 154
 80035E1C    lw      s3,0x1C(sp)                                       ; src\renderText02\renderText_02.asm line 155
 80035E20    lw      s2,0x18(sp)                                       ; src\renderText02\renderText_02.asm line 156
@@ -1738,8 +1730,8 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80035E2C    jr      ra                                                ; src\renderText02\renderText_02.asm line 159
 80035E30    addiu   sp,0x58                                           ; src\renderText02\renderText_02.asm line 160
 80035E34 .endarea                                                     ; src\renderText02\renderText_02.asm line 160
-80035E34 .org 0x80035460                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 196
-80035460 .area 0x000001F0                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 197
+80035E34 .org 0x80035460                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 180
+80035460 .area 0x000001F0                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 181
 80035460 rendertextmap_renderchar:                                    ; src\renderText02\renderText_02_renderChar.asm line 34
 80035460    addiu   sp,-0x22C                                         ; src\renderText02\renderText_02_renderChar.asm line 35
 80035464    sw      s1,0x21C(sp)                                      ; src\renderText02\renderText_02_renderChar.asm line 36
@@ -1804,7 +1796,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80035544    lw      v1,0x4(s1)                                        ; src\renderText02\renderText_02_renderChar.asm line 102
 80035548    sll     v0,0x3                                            ; src\renderText02\renderText_02_renderChar.asm line 103
 8003554C    addu    a1,v1,v0                                          ; src\renderText02\renderText_02_renderChar.asm line 104
-80035550    jal     0x8000B690                                        ; src\renderText02\renderText_02_renderChar.asm line 107
+80035550    jal     0x8005242C                                        ; src\renderText02\renderText_02_renderChar.asm line 107
 80035554    nop                                                       ; src\renderText02\renderText_02_renderChar.asm line 112
 80035558    andi    v0,v1,0x1                                         ; src\renderText02\renderText_02_renderChar.asm line 113
 8003555C    bnez    v0,0x80035574                                     ; src\renderText02\renderText_02_renderChar.asm line 114
@@ -1814,7 +1806,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 8003556C    ori     s0,r0,0x1                                         ; src\renderText02\renderText_02_renderChar.asm line 118
 80035570    ori     s0,r0,0x2                                         ; src\renderText02\renderText_02_renderChar.asm line 119
 80035574 @loc_80035574:                                               ; src\renderText02\renderText_02_renderChar.asm line 121
-80035574    jal     0x8000B6A0                                        ; src\renderText02\renderText_02_renderChar.asm line 124
+80035574    jal     0x8005243C                                        ; src\renderText02\renderText_02_renderChar.asm line 124
 80035578    andi    s0,0xFF                                           ; src\renderText02\renderText_02_renderChar.asm line 129
 8003557C    mult    v0,s0                                             ; src\renderText02\renderText_02_renderChar.asm line 130
 80035580    lw      v1,0xC(s1)                                        ; src\renderText02\renderText_02_renderChar.asm line 131
@@ -1850,7 +1842,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 800355E8    sll     a0,0x8                                            ; src\renderText02\renderText_02_renderChar.asm line 165
 800355EC    addu    v0,a0                                             ; src\renderText02\renderText_02_renderChar.asm line 166
 800355F0    sh      v0,0x12(sp)                                       ; src\renderText02\renderText_02_renderChar.asm line 167
-800355F4    jal     0x8000B6A0                                        ; src\renderText02\renderText_02_renderChar.asm line 170
+800355F4    jal     0x8005243C                                        ; src\renderText02\renderText_02_renderChar.asm line 170
 800355F8    nop                                                       ; src\renderText02\renderText_02_renderChar.asm line 175
 800355FC    mult    v0,s0                                             ; src\renderText02\renderText_02_renderChar.asm line 176
 80035600    mflo    v0                                                ; src\renderText02\renderText_02_renderChar.asm line 177
@@ -1876,8 +1868,8 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 80035648    jr      ra                                                ; src\renderText02\renderText_02_renderChar.asm line 201
 8003564C    addiu   sp,0x22C                                          ; src\renderText02\renderText_02_renderChar.asm line 202
 80035650 .endarea                                                     ; src\renderText02\renderText_02_renderChar.asm line 202
-80035650 .org 0x8003D904                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 201
-8003D904 .area 0x0000035C                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 202
+80035650 .org 0x8003D904                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 185
+8003D904 .area 0x0000035C                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 186
 8003D904 sub_8003d904:                                                ; src\renderInventory.asm line 12
 8003D904    addiu   sp,-0x38                                          ; src\renderInventory.asm line 13
 8003D908    sw      s4,0x28(sp)                                       ; src\renderInventory.asm line 14
@@ -1988,7 +1980,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 8003DA90    move    a1,s1                                             ; src\renderInventory.asm line 131
 8003DA94    move    a2,s0                                             ; src\renderInventory.asm line 132
 8003DA98 @settextcontext:                                             ; src\renderInventory.asm line 134
-8003DA98    jal     0x8000B6C8                                        ; src\renderInventory.asm line 136
+8003DA98    jal     0x80052558                                        ; src\renderInventory.asm line 136
 8003DA9C    nop                                                       ; src\renderInventory.asm line 137
 8003DAA0    nop                                                       ; src\renderInventory.asm line 138
 8003DAA4    nop                                                       ; src\renderInventory.asm line 139
@@ -2111,8 +2103,8 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 8003DC58    jr      ra                                                ; src\renderInventory.asm line 277
 8003DC5C    addiu   sp,0x38                                           ; src\renderInventory.asm line 278
 8003DC60 .endarea                                                     ; src\renderInventory.asm line 278
-8003DC60 .org 0x8003DC60                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 206
-8003DC60 .area 0x00000278                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 207
+8003DC60 .org 0x8003DC60                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 190
+8003DC60 .area 0x00000278                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 191
 8003DC60 sub_8003dc60:                                                ; src\updateInventory.asm line 10
 8003DC60    addiu   sp,-0x38                                          ; src\updateInventory.asm line 11
 8003DC64    sw      s4,0x28(sp)                                       ; src\updateInventory.asm line 12
@@ -2182,7 +2174,7 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 8003DD54    addiu   a0,s3,0x38                                        ; src\updateInventory.asm line 82
 8003DD58    move    a1,s0                                             ; src\updateInventory.asm line 83
 8003DD5C @settextcontext:                                             ; src\updateInventory.asm line 85
-8003DD5C    jal     0x8000B6D0                                        ; src\updateInventory.asm line 88
+8003DD5C    jal     0x80052560                                        ; src\updateInventory.asm line 88
 8003DD60    nop                                                       ; src\updateInventory.asm line 89
 8003DD64    nop                                                       ; src\updateInventory.asm line 90
 8003DD68    nop                                                       ; src\updateInventory.asm line 91
@@ -2287,8 +2279,8 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 8003DED0    jr      ra                                                ; src\updateInventory.asm line 212
 8003DED4    addiu   sp,0x38                                           ; src\updateInventory.asm line 213
 8003DED8 .endarea                                                     ; src\updateInventory.asm line 213
-8003DED8 .org 0x8004D0B8                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 211
-8004D0B8 .area 0x00000280                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 212
+8003DED8 .org 0x8004D0B8                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 195
+8004D0B8 .area 0x00000280                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 196
 8004C9FC sub_8004c9fc:                                                ; src\renderMap.asm line 10
 8004CB38 sub_8004cb38:                                                ; src\renderMap.asm line 11
 8003EB58 sub_8003eb58:                                                ; src\renderMap.asm line 12
@@ -2467,8 +2459,8 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 8004D32C    jr      ra                                                ; src\renderMap.asm line 222
 8004D330    addiu   sp,0x28                                           ; src\renderMap.asm line 223
 8004D334 .endarea                                                     ; src\renderMap.asm line 223
-8004D334 .org 0x8004D850                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 216
-8004D850 .area 0x000000B4                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 217
+8004D334 .org 0x8004D850                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 200
+8004D850 .area 0x000000B4                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 201
 80035D38 rendertextmap_readmdt:                                       ; src\renderMapTextPoliceStation.asm line 6
 8004D850 sub_8004d850:                                                ; src\renderMapTextPoliceStation.asm line 8
 8004D850    addiu   sp,-0x18                                          ; src\renderMapTextPoliceStation.asm line 10
@@ -2522,8 +2514,8 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 8004D8FC    jr      ra                                                ; src\renderMapTextPoliceStation.asm line 85
 8004D900    addiu   sp,0x18                                           ; src\renderMapTextPoliceStation.asm line 86
 8004D904 .endarea                                                     ; src\renderMapTextPoliceStation.asm line 86
-8004D904 .org 0x8004FC68                                              ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 221
-8004FC68 .area 0x00000124                                             ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 222
+8004D904 .org 0x8004FC68                                              ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 205
+8004FC68 .area 0x00000124                                             ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 206
 8004FC68 mm_alloc_ng_code:                                            ; src\memoryManagerAlloc.asm line 7
 8004FC68    addiu   sp,-0x18                                          ; src\memoryManagerAlloc.asm line 8
 8004FC6C    lui     v0,-0x7FF0                                        ; src\memoryManagerAlloc.asm line 9
@@ -2602,9 +2594,9 @@ FFFFFFFF .open "!SLPS017.83","SLPS017.83",0x8000B070                  ; D:\Hacki
 8004FD74    move    a1,v0                                             ; src\memoryManagerAlloc.asm line 95
 8004FD78    move    v0,zero                                           ; src\memoryManagerAlloc.asm line 96
 8004FD7C loc_8004fd7c:                                                ; src\memoryManagerAlloc.asm line 98
-8004FD7C    jal     0x8000B804                                        ; src\memoryManagerAlloc.asm line 101
-8004FD80    nop                                                       ; src\memoryManagerAlloc.asm line 102
+8004FD7C    lw      ra,0x10(sp)                                       ; src\memoryManagerAlloc.asm line 104
+8004FD80    nop                                                       ; src\memoryManagerAlloc.asm line 105
 8004FD84    jr      ra                                                ; src\memoryManagerAlloc.asm line 108
 8004FD88    addiu   sp,0x18                                           ; src\memoryManagerAlloc.asm line 109
 8004FD8C .endarea                                                     ; src\memoryManagerAlloc.asm line 109
-8004FD8C .close                                                       ; D:\HackingProjects\MizzurnaFalls_PSX\MizzurnaFallsTranslationKit\Assets\TextCompression/main.asm line 228
+8004FD8C .close                                                       ; G:\HackingProjects\MizzurnaFallsEditor_PSX\Assets\TextCompression/main.asm line 212
