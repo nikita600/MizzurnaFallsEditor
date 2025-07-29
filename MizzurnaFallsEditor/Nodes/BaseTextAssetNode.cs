@@ -209,8 +209,8 @@ namespace MizzurnaFallsEditor.Nodes
 		        throw new Exception("Character tables ShiftJis.tbl or Cafe.tbl not found");
 	        }
 	        
-	        _cafeTable = new EncodingTable(File.ReadAllBytes(cafeTablePath));
-	        _defaultTable = new EncodingTable(File.ReadAllBytes(defaultTablePath));
+	        _cafeTable = new EncodingTable(cafeTablePath, File.ReadAllBytes(cafeTablePath));
+	        _defaultTable = new EncodingTable(defaultTablePath, File.ReadAllBytes(defaultTablePath));
         }
         
         #endregion

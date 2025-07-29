@@ -86,10 +86,10 @@ namespace MizzurnaFallsEditor
 		        throw new Exception("Character tables ShiftJis.tbl or Cafe.tbl not found");
 	        }
 	        
-	        _cafeTable = new EncodingTable(File.ReadAllBytes(cafeTablePath));
-	        _defaultTable = new EncodingTable(File.ReadAllBytes(defaultTablePath));
-	        _pixelTable = new EncodingTable(File.ReadAllBytes(pixelTablePath));
-	        _sourceTable = new EncodingTable(File.ReadAllBytes(sourceTablePath));
+	        _cafeTable = new EncodingTable(cafeTablePath, File.ReadAllBytes(cafeTablePath));
+	        _defaultTable = new EncodingTable(defaultTablePath, File.ReadAllBytes(defaultTablePath));
+	        _pixelTable = new EncodingTable(pixelTablePath, File.ReadAllBytes(pixelTablePath));
+	        _sourceTable = new EncodingTable(sourceTablePath, File.ReadAllBytes(sourceTablePath));
         }
         
         private static void CompareCdFiles()

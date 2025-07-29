@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -9,6 +10,8 @@ namespace MizzurnaFallsEditor
     {
         #region Fields
 
+        private readonly string _name;
+        
         private readonly Dictionary<short, char> _codeToCharTable = new Dictionary<short, char>();
         private readonly Dictionary<char, short> _charToCodeTable = new Dictionary<char, short>();
 		
@@ -19,16 +22,19 @@ namespace MizzurnaFallsEditor
         
         #region Public
 
-        public EncodingTable(byte[] tableBytes)
+        public EncodingTable(string name, byte[] tableBytes)
         {
-            var entries = GetCharEntries(tableBytes);
+            _name = name;
+
+            var encoding = GetEncoding(tableBytes);
+            var entries = GetCharEntries(tableBytes, encoding);
             var charsList = GetCharsList(entries);
             foreach (var entry in charsList)
             {
                 var code = entry.Key;
                 var character = entry.Value;
 
-                if (_codeToCharTable.ContainsKey(code))
+                if (_codeToCharTable.TryGetValue(code, out var foundChar))
                 {
                     _dupCodeToCharTable.Add(code, character);
                 }
@@ -37,7 +43,7 @@ namespace MizzurnaFallsEditor
                     _codeToCharTable.Add(code, character);
                 }
 
-                if (_charToCodeTable.ContainsKey(character))
+                if (_charToCodeTable.TryGetValue(character, out var foundCode))
                 {
                     _dupCharToCodeTable.Add(character, code);
                 }
@@ -72,14 +78,39 @@ namespace MizzurnaFallsEditor
 
         #region Private
 
-        private static List<string> GetCharEntries(byte[] data)
+        private static Encoding GetEncoding(byte[] data)
         {
-            var entries = new List<string>();
-            var shiftJis = Encoding.GetEncoding("shift-jis");
-			
+            Encoding encoding = null;
+            
             using (var memoryStream = new MemoryStream(data))
             {
-                using (var streamReader = new StreamReader(memoryStream, shiftJis))
+                using (var streamReader = new StreamReader(memoryStream))
+                {
+                    var encodingName = streamReader.ReadLine();
+                    if (!string.IsNullOrEmpty(encodingName))
+                    {
+                        try
+                        {
+                            encoding = Encoding.GetEncoding(encodingName);
+                        }
+                        catch (Exception e)
+                        {
+                            // Don't care
+                        }
+                    }
+                }
+            }
+
+            return encoding ?? Encoding.GetEncoding("shift-jis");
+        }
+        
+        private static List<string> GetCharEntries(byte[] data, Encoding encoding)
+        {
+            var entries = new List<string>();
+            
+            using (var memoryStream = new MemoryStream(data))
+            {
+                using (var streamReader = new StreamReader(memoryStream, encoding))
                 {
                     while (!streamReader.EndOfStream)
                     {

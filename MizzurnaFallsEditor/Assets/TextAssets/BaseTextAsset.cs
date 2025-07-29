@@ -105,7 +105,7 @@ namespace MizzurnaFallsEditor.Assets
 					}
 					else
 					{
-						Console.WriteLine("Fail to encode char: " + character);
+						Console.WriteLine($"Fail to encode char: {character}, code: 0x{(int)character:X4}");
 					}
 				}
             }
